@@ -122,8 +122,17 @@ passwords</a>.
 I didn&#8217;t want to create a config file that needs to be manually changed
 by the user so I thought of something else:</p>
 
-<script src="https://gist.github.com/bc49364068b1a5fc9e27.js"></script>
-
+<pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
+  require 'securerandom'
+  if File.exist? 'token'
+    token = File.open('token').read
+  else
+    token = SecureRandom.base64(64)
+    File.open('token', 'w') { |file| file.write(token) }
+  end
+  puts token
+")"
+</code></pre>
 
 <p>This little script goes into one of the <code>action_hooks</code> that are sourced
 by the app.</p>
