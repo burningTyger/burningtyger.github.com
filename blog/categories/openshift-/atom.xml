@@ -4,7 +4,7 @@
   <title><![CDATA[Category: openshift, | Some thoughts]]></title>
   <link href="http://burningTyger.github.com/blog/categories/openshift-/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-01-16T20:18:02+01:00</updated>
+  <updated>2013-01-16T20:21:15+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -87,8 +87,7 @@ Moodle expects all the database settings and other stuff to properly run.</p>
 OPENSHIFT_SECURE_TOKEN (which I described
 <a href="http://burningtyger.github.com/blog/2013/01/06/hassle-free-secure-tokens-%0Aon-openshift/">here</a>) I just added a line which copies the <code>config.php</code> from
 <code>config/config.php</code> to <code>php/config.php</code>. That means I added a dir with a file
-in it to the <a href="https://github.com/burningTyger/openshift_moodle/tree/master/config">parent
-directory</a>
+in it to the <a href="https://github.com/burningTyger/openshift_moodle/tree/master/config">parent directory</a>
 and copied it upon deployment to the submodule folder:</p>
 
 <pre><code>cp ~/app-root/repo/config/config.php ~/app-root/repo/php/
