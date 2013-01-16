@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: openshift, | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/openshift-/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
   <updated>2013-01-16T20:18:02+01:00</updated>
   <id>http://burningTyger.github.com/</id>
@@ -26,7 +26,7 @@ doing so but most are a pain to maintain if you need frequent updates to keep
 up with security issues.</p>
 
 <p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
-overwriting with archives etc. use a submodule instead. I&#8217;ll post an example
+overwriting with archives etc. use a submodule instead. I'll post an example
 with Moodle here, the same can be said about most other apps. Assuming you set
 up a new app through the web interface:</p>
 
@@ -67,15 +67,15 @@ is set to a certain commit:</p>
 <p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
 
 <p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
-is empty. That&#8217;s because there is nothing. All it does is refer to that moodle
-repo commit. You can trigger the clone of that repo but there&#8217;s no need to.
+is empty. That's because there is nothing. All it does is refer to that moodle
+repo commit. You can trigger the clone of that repo but there's no need to.
 Openshift can do that for you once you push it there.</p>
 
-<p>You get the idea. You don&#8217;t have control over that submodule. Take it or leave
+<p>You get the idea. You don't have control over that submodule. Take it or leave
 it. So unless you want to fork moodle with your own changes to the repo and
 pull in changes to that fork you cannot make changes to it.</p>
 
-<p>That&#8217;s where we are. However, there is a simple workaround for this on
+<p>That's where we are. However, there is a simple workaround for this on
 Openshift that is really slick and easy to set up. You can use one of the
 <code>action_hooks</code> that come with each app and that reside in the
 <code>.openshift/action_hooks</code> dir in the root of your repo.</p>
@@ -117,7 +117,7 @@ you need to create a secure token to have an extra layer of security.</p>
 
 <p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
 secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn&#8217;t want to create a config file that needs to be manually changed
+I didn't want to create a config file that needs to be manually changed
 by the user so I thought of something else:</p>
 
 <pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
@@ -145,56 +145,10 @@ and writes a random string into it.</p>
 
 <p>After that it writes the string to STDOUT when it is set to
 <code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app&#8217;s config files without manually entering a string yourself.</p>
+your app's config files without manually entering a string yourself.</p>
 
 <p>If you need to migrate your app from somewhere else to Openshift you can
 still use this script and just set via SSH the string in <code>token</code>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Installing a custom translation for Instructure's Canvas]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/"/>
-    <updated>2013-01-04T00:14:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas</id>
-    <content type="html"><![CDATA[<p>You can find their repos here over at @instructure. Canvas is an
-interesting Ruby on Rails Learning management system that looks a lot
-cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
-still promising. Provided with the default language English there is
-Spanish and Russian available.</p>
-
-<p>If you want to add your own translation first check if there is already
-a complete translation available over at
-<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
-translation community. Right now there are some other languages
-available, German for example is complete. You can download a
-translation and use it in your project.</p>
-
-<p>German example:</p>
-
-<p>rename the file to de.yml and place it in your locale folder</p>
-
-<pre><code>cp de.yml canvas/config/locales/
-</code></pre>
-
-<p>edit the locales.yml file so that it looks like this:</p>
-
-<pre><code>en:
-  locales:
-    en: English
-es:
-  locales:
-    es: Español
-ru:
-  locales:
-    ru: ру́сский
-de:
-  locales:
-    de: Deutsch
-</code></pre>
-
-<p>after that you need to restart your app and set the language to German
-in your site settings.</p>
 ]]></content>
   </entry>
   

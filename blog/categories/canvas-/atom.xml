@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: canvas, | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/canvas-/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.com/"/>
+  <updated>2013-01-16T20:18:02+01:00</updated>
+  <id>http://burningTyger.github.com/</id>
+  <author>
+    <name><![CDATA[burningTyger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Installing a custom translation for Instructure's Canvas]]></title>
+    <link href="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/"/>
+    <updated>2013-01-04T00:14:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas</id>
+    <content type="html"><![CDATA[<p>You can find their repos here over at @instructure. Canvas is an
+interesting Ruby on Rails Learning management system that looks a lot
+cleaner than Moodle. It's still 1.8 only and running on rails 2.3 but
+still promising. Provided with the default language English there is
+Spanish and Russian available.</p>
+
+<p>If you want to add your own translation first check if there is already
+a complete translation available over at
+<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
+translation community. Right now there are some other languages
+available, German for example is complete. You can download a
+translation and use it in your project.</p>
+
+<p>German example:</p>
+
+<p>rename the file to de.yml and place it in your locale folder</p>
+
+<pre><code>cp de.yml canvas/config/locales/
+</code></pre>
+
+<p>edit the locales.yml file so that it looks like this:</p>
+
+<pre><code>en:
+  locales:
+    en: English
+es:
+  locales:
+    es: Español
+ru:
+  locales:
+    ru: ру́сский
+de:
+  locales:
+    de: Deutsch
+</code></pre>
+
+<p>after that you need to restart your app and set the language to German
+in your site settings.</p>
+]]></content>
+  </entry>
+  
+</feed>
