@@ -108,36 +108,36 @@ vielen Schulen und Universitäten eingesetzt. Neben unzähligen &hellip;">
   </header>
 
 
-  <div class="entry-content"><h1>Moodle?</h1>
+  <div class="entry-content"><h3>Moodle?</h3>
 
 <p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
 vielen Schulen und Universitäten eingesetzt. Neben unzähligen
 Einstellungsmöglichkeiten und Plugins hat es mittlerweile einen Status
-erreicht, der es möglich macht, Moodle für nahezu jede Anwendung
-einzurichten. Dabei spielt es dann keine Rolle, ob 12 Nutzer bedient
+erreicht, der es möglich macht, Moodle für nahezu jeden
+Anwendungsbereich einzurichten. Dabei spielt es dann keine Rolle, ob 12 Nutzer bedient
 werden oder 12 Millionen. Moodle ist für so ziemlich alles gewappnet und
 eine aktive Entwicklergemeinde sorgt für einen ständigen Fluss an
 Verbesserungen und Erweiterungen.</p>
 
-<p>Das klingt erstmal gut, aber wer Moodle ernsthaft einsetzen möchte
+<p>Das klingt erstmal gut, aber wer Moodle ernsthaft einsetzen möchte,
 braucht eine Menge Zeit, einige Ressourcen und Durchhaltevermögen.
 Moodle kann ein richtiges Monster sein. Die Basisinstallation ist recht
 umfangreich und man braucht einiges an Ressourcen, um Moodle
 einigermaßen zum Laufen zu bekommen. Der Speicherplatz, den man vom
 Provider nebenan zur Verfügung gestellt bekommt, reicht meistens nicht
 aus, um eine sinnvolle Installation einzurichten. Moodle ist durch seine
-schiere Größe Speicherhungrig und verlangt nach mehr. Darüber hinaus
+schiere Größe speicherhungrig und verlangt nach mehr. Darüber hinaus
 muss der Server PHP 5.3 mit einigen Erweiterungen und MySQL bereitstellen. Da
 die meisten Provider keine genauen Angaben über Speicherkapazität machen
 und teilweise auch nicht verraten, welche Erweiterungen installiert
 sind, möchte man ungern Verträge eingehen.</p>
 
-<h1>Openshift</h1>
+<h3>Openshift</h3>
 
 <p>An dieser Stelle kommt <a href="https://openshift.com">Openshift</a> von Red Hat
-ins Spiel. Openshift ist ein relativ neuer Anbieter einer Platform as a
-Service, zu neudeutsch Cloud. Man installiert eine sogenannte
-Applikation, in unserem Fall Moodle bei Openshift und dort kümmert man
+ins Spiel. Openshift ist ein relativ neuer Anbieter einer <i>Platform as a
+Service</i>, zu neudeutsch <i>Cloud</i>. Man installiert eine sogenannte
+Applikation, in unserem Fall Moodle, bei Openshift und dort kümmert man
 sich um die notwendigen Ressourcen. D.h. braucht man viel Ressourcen,
 weil viele Nutzer auf den Dienst zugreifen, dann wird die Anwendung
 skaliert, bekommt also mehr Ressourcen zugeteilt. Bei geringerem Bedarf
@@ -166,7 +166,7 @@ als eine und wenn, dann staut es sich höchstens beim Login.</p>
 
 <p>Openshift ist kein klassischer Anbieter von Speicherplatz im Internet.
 Es ist ausgelegt für moderne Webanwendungen, die mit der
-Versionsverwaltung <a href="https://git-scm.com">Git</a> entwickelt wurden. Git ist keine
+Versionsverwaltung <a href="http://git-scm.com">Git</a> entwickelt wurden. Git ist keine
 Programmiersprache sondern ein Weg, unterschiedliche Versionen einer
 Software zu verwalten. Eine Art Buchhaltung für Software. Jeder Zustand
 wird festgehalten und kann rückgängig gemacht werden. Man kann
@@ -183,9 +183,9 @@ Server auf Openshift neu. Damit werden alle Aktualisierungen aktiv und
 die Anwendung ist auf dem neusten Stand.</p>
 
 <p>Moodle verwendet zur Entwicklung bereits Git und betreibt ein sog.
-öffentliches Repository auf (GitHub)[https://github.com] unter der
+öffentliches Repository auf <a href="https://github.com">GitHub</a> unter der
 Adresse
-(https://github.com/moodle/moodle)[https://github.com/moodle/moodle].
+<a href="https://github.com/moodle/moodle">https://github.com/moodle/moodle</a>.
 Dort kann man alle Änderungen, sogenannte Commits nachvollziehen und
 beobachten. Leider kann man dieses Repository nicht direkt bei Openshift
 verwenden, dafür ist Moodle dann wieder etwas anspruchsvoll. Man muss
@@ -193,12 +193,12 @@ Moodle vorerst in ein anderes Repository einbinden, damit es die
 richtigen Einstellungen für die Datenbank etc. findet und verwenden
 kann. Damit nicht jeder von vorne anfangen muss und das Rad mehrmals
 erfunden wird, habe ich unter
-(openshift_moodle)[https://github.com/burningTyger/openshift_moodle] ein
-Repository eingerichtet, dass sich direkt für Openshift verwenden lässt.
+<a href="https://github.com/burningTyger/openshift_moodle">openshift_moodle</a> ein
+Repository eingerichtet, das sich direkt für Openshift verwenden lässt.
 Dort gibt es auch eine Anleitung auf Englisch, die bei der Einrichtung
 hilft. Sollte es Schwierigkeiten mit der englischen Anleitung geben,
 stehe ich für Fragen gerne zur Verfügung. Entweder per Twitter
-(@btyga)[https://twitter.com/btyga]
+<a href="https://twitter.com/btyga">@btyga</a>
 oder per eMail über b6tyger bei gmail.com.</p>
 </div>
   
