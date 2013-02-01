@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Some thoughts</title>
+  <title>Moodle auf Openshift betreiben - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
@@ -19,7 +19,7 @@ vielen Schulen und Universitäten eingesetzt. Neben unzähligen &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,15 +77,12 @@ vielen Schulen und Universitäten eingesetzt. Neben unzähligen &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/01/moodle-auf-openshift-betreiben/">Moodle Auf Openshift Betreiben</a></h1>
+      <h1 class="entry-title">Moodle Auf Openshift Betreiben</h1>
     
     
       <p class="meta">
@@ -108,7 +105,7 @@ vielen Schulen und Universitäten eingesetzt. Neben unzähligen &hellip;">
   </header>
 
 
-  <div class="entry-content"><h1>Moodle?</h1>
+<div class="entry-content"><h1>Moodle?</h1>
 
 <p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
 vielen Schulen und Universitäten eingesetzt. Neben unzähligen
@@ -201,136 +198,16 @@ stehe ich für Fragen gerne zur Verfügung. Entweder per Twitter
 (@btyga)[https://twitter.com/btyga]
 oder per eMail über b6tyger bei gmail.com.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/16/custom-config-files-in-openshift-submodules/">Custom Config Files in Openshift Submodules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">burningTyger</span></span>
 
-<time datetime="2013-01-16T20:08:00+01:00" pubdate data-updated="true">Jan 16<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Using a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a> in one
-of your <a href="https://openshift.redhat.com">Openshift</a> apps can be quite useful. I
-created a <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> and needed to embed
-<a href="http://moodle.org">Moodle</a> inside my Openshift repo. There are many ways of
-doing so but most are a pain to maintain if you need frequent updates to keep
-up with security issues.</p>
-
-<p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
-overwriting with archives etc. use a submodule instead. I&#8217;ll post an example
-with Moodle here, the same can be said about most other apps. Assuming you set
-up a new app through the web interface:</p>
-
-<pre><code> rhc app git-clone moodle 
- # clone the app locally cd moodle 
- git rm -rf php git
- ci -m 'remove php dir for submodule' 
- # clean your repo git submodule add
- git://git.moodle.org/moodle.git php 
- # make php your submodule dir 
- cd php git
- checkout 10ad21dc9a50c4720bf69fa0224eeb28a892e997 
- # check out a certain commit inside your submodule 
- cd .. 
- git add -u 
- git ci -am 'add moodle submodule and set to 2.3.3' 
- # go back to your repo root and commit the submodule to it
-</code></pre>
-
-<p>Now you can push your app to Openshift and you can easily update your app by
-updating the submodule to a newer commit.</p>
-
-<p>There is one caveat though: you cannot add your own files to the submodule
-without having a remote repository where you can store your changes and make
-them available to others (in this case Openshift because it will need the
-commit with your chages accessible). As you see the submodule is alien to the
-parent repository. Everything the parent knows about the submodule is inside
-the <code>.gitmodules</code> file. It keeps track of the submodule and its attributes:</p>
-
-<pre><code>[submodule "php"] 
-path = php 
-url = git://git.moodle.org/moodle.git
-</code></pre>
-
-<p>If you also check out the github page you will notice that the submodule repo
-is set to a certain commit:</p>
-
-<p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
-
-<p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
-is empty. That&#8217;s because there is nothing. All it does is refer to that moodle
-repo commit. You can trigger the clone of that repo but there&#8217;s no need to.
-Openshift can do that for you once you push it there.</p>
-
-<p>You get the idea. You don&#8217;t have control over that submodule. Take it or leave
-it. So unless you want to fork moodle with your own changes to the repo and
-pull in changes to that fork you cannot make changes to it.</p>
-
-<p>That&#8217;s where we are. However, there is a simple workaround for this on
-Openshift that is really slick and easy to set up. You can use one of the
-<code>action_hooks</code> that come with each app and that reside in the
-<code>.openshift/action_hooks</code> dir in the root of your repo.</p>
-
-<p>In the case of Moodle I needed to place my <code>config.php</code> in the <code>php</code> dir where
-Moodle expects all the database settings and other stuff to properly run.</p>
-
-<p>Since I already used <code>.openshift/action_hooks/pre_start_php-5.3</code> to set the
-OPENSHIFT_SECURE_TOKEN (which I described
-<a href="http://burningtyger.github.com/blog/2013/01/06/hassle-free-secure-tokens-%0Aon-openshift/">here</a>) I just added a line which copies the <code>config.php</code> from
-<code>config/config.php</code> to <code>php/config.php</code>. That means I added a dir with a file
-in it to the <a href="https://github.com/burningTyger/openshift_moodle/tree/master/config">parent directory</a>
-and copied it upon deployment to the submodule folder:</p>
-
-<pre><code>cp ~/app-root/repo/config/config.php ~/app-root/repo/php/
-</code></pre>
-
-<p>Since the <code>action_hook</code> are called within every deployment there is no need to
-manually move files or change the submodule via SSH. The config file can be
-added to the Openshift repository and tracked there. A very clean solution if
-you ask me.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/">Hassle Free Secure Tokens on Openshift</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -342,142 +219,38 @@ you ask me.</p>
   
 
 
-<time datetime="2013-01-10T15:01:00+01:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>
-
-<p>You create an app, everybody who likes it pulls it into their Openshift
-repository and deploys it. Usually everything is ok but
-<a href="https://openshift.redhat.com/community/developers/get-involved/creating-quickstarts">sometimes</a>
-you need to create a secure token to have an extra layer of security.</p>
-
-<p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
-secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn&#8217;t want to create a config file that needs to be manually changed
-by the user so I thought of something else:</p>
-
-<pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
-  require 'securerandom'
-  if File.exist? 'token'
-    token = File.open('token').read
-  else
-    token = SecureRandom.base64(64)
-    File.open('token', 'w') { |file| file.write(token) }
-  end
-  puts token
-")"
-</code></pre>
-
-<p>This little script goes into one of the <code>action_hooks</code> that are sourced
-by the app.</p>
-
-<p>In case of my Moodle repo I put it into
-<code>.openshift/action_hooks/pre_start_php-5.3</code>. For other apps you will
-have to use the appropriate cartridge name instead (i.e ruby-1.9 etc.).</p>
-
-<p>What this script does it runs an inline Ruby script that checks if a
-token file exists in your data dir and reads it. If not, it creates one
-and writes a random string into it.</p>
-
-<p>After that it writes the string to STDOUT when it is set to
-<code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app&#8217;s config files without manually entering a string yourself.</p>
-
-<p>If you need to migrate your app from somewhere else to Openshift you can
-still use this script and just set via SSH the string in <code>token</code>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-02-01T20:35:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">Installing a Custom Translation for Instructure&#8217;s Canvas</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/deutsch/'>deutsch</a>, <a class='category' href='/blog/categories/moodle/'>moodle</a>, <a class='category' href='/blog/categories/openshift/'>openshift</a>
+  
+</span>
 
 
-<time datetime="2013-01-04T00:14:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>You can find their repos here over at @instructure. Canvas is an
-interesting Ruby on Rails Learning management system that looks a lot
-cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
-still promising. Provided with the default language English there is
-Spanish and Russian available.</p>
-
-<p>If you want to add your own translation first check if there is already
-a complete translation available over at
-<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
-translation community. Right now there are some other languages
-available, German for example is complete. You can download a
-translation and use it in your project.</p>
-
-<p>German example:</p>
-
-<p>rename the file to de.yml and place it in your locale folder</p>
-
-<pre><code>cp de.yml canvas/config/locales/
-</code></pre>
-
-<p>edit the locales.yml file so that it looks like this:</p>
-
-<pre><code>en:
-  locales:
-    en: English
-es:
-  locales:
-    es: Español
-ru:
-  locales:
-    ru: ру́сский
-de:
-  locales:
-    de: Deutsch
-</code></pre>
-
-<p>after that you need to restart your app and set the language to German
-in your site settings.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/16/custom-config-files-in-openshift-submodules/" title="Previous Post: Custom config files in Openshift submodules">&laquo; Custom config files in Openshift submodules</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -497,14 +270,14 @@ in your site settings.</p>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">Installing a custom translation for Instructure&#8217;s Canvas</a>
+        <a href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">Installing a custom translation for Instructure's Canvas</a>
       </li>
     
   </ul>
 </section>
 <section>
   <h1>About Me</h1>
-  <p>I document and translate Ruby: MRI, Sinatra, Rubinius, and even Rails. I&#8217;m the creator of <a href="http://farhang.im">farhang.im</a> the German-Persian open source dictionary app.</p>
+  <p>I document and translate Ruby: MRI, Sinatra, Rubinius, and even Rails. I'm the creator of <a href="http://farhang.im">farhang.im</a> the German-Persian open source dictionary app.</p>
   <p><a href="https://github.com/burningTyger">@burningTyger</a> on GitHub</p>
 </section>
 
@@ -515,6 +288,7 @@ in your site settings.</p>
 
   
 </aside>
+
 
     </div>
   </div>
