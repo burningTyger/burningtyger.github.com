@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-02-01T21:26:46+01:00</updated>
+  <updated>2013-02-01T21:28:29+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -62,8 +62,8 @@ bis zu 1.5GB an Speicher zur Verfügung. Das lasse man sich jetzt mal auf
 der Zunge zergehen. Das bietet kein Provider um die Ecke und auch nicht
 für umsonst.</p>
 
-<p>500 MB sind eine gute Größe für eine einfache Moodle Installation. Es
-reicht um etwa 5-10 Personen gleichzeitig zu versorgen. 5-10 Personen,
+<p>500MB sind eine gute Größe für eine einfache Moodle Installation. Es
+reicht um etwa 5–10 Personen gleichzeitig zu versorgen. 5-10 Personen,
 die gleichzeitig versuchen eine Seite zu laden. Mit anderen Worten, wenn
 eine ganze Klasse von 30 Schülern an 30 PCs sitzt und gleichzeitig
 versucht sich einzuloggen. Der eine braucht etwas länger, der andere ist
@@ -72,7 +72,7 @@ Seite warten, wird aber dann auch bedient und kann sich einloggen. Wie
 viele Klassen arbeiten gleichzeitig an Moodle? In seltenen Fällen mehr
 als eine und wenn, dann staut es sich höchstens beim Login.</p>
 
-<h1>Git</h1>
+<h3>Git</h3>
 
 <p>Openshift ist kein klassischer Anbieter von Speicherplatz im Internet.
 Es ist ausgelegt für moderne Webanwendungen, die mit der
