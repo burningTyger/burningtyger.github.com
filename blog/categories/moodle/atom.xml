@@ -4,7 +4,7 @@
   <title><![CDATA[Category: moodle | Some thoughts]]></title>
   <link href="http://burningTyger.github.com/blog/categories/moodle/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-02-01T21:28:29+01:00</updated>
+  <updated>2013-02-10T21:57:24+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Moodle on Openshift one liner]]></title>
+    <link href="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/"/>
+    <updated>2013-02-10T21:55:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner</id>
+    <content type="html"><![CDATA[<p>rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git</p>
+
+<p>Disclaimer: You do need Ruby, the rhc gem and git though :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodle auf Openshift betreiben]]></title>
