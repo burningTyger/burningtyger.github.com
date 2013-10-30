@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-02-10T21:58:11+01:00</updated>
+  <updated>2013-10-30T20:41:38+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Moodles cron jobs beschleunigen]]></title>
+    <link href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/"/>
+    <updated>2013-10-30T20:33:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen</id>
+    <content type="html"><![CDATA[<p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
+Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
+cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
+und hier kommt der Clou, direkt mit php aufrufen kann. Lässt man das dann alle
+paar Minuten über cron laufen, dann macht das einen erheblichen Unterschied aus.
+Der Test mit einer kleineren Installation ergab, dass ein Apache-Aufruf etwa
+20 Sekunden in Anspruch nahm, der direkte Aufruf schon nach etwa 4 Sekunden
+erledigt war. Das war also eine Steigerung von über 500%, von der Schonung
+weiterer Ressourcen spreche ich noch gar nicht. Wenn man den Unterschied bei
+NewRelic beobachtet, sieht man schön, dass die Anfragen an die Datenbank und an
+den Server im allgemeinen bedeutend nachlassen.</p>
+
+<p>In meiner Installation unter Ubuntu 12.04 sah der Aufruf mit der cron Tabelle
+wie folgt aus:</p>
+
+<pre><code>*/10 * * * * php -q -f /usr/share/nginx/www/moodle/admin/cli/cron.php
+</code></pre>
+
+<p>Das wars, wird mittels:</p>
+
+<pre><code>crontab -e
+</code></pre>
+
+<p>in die cron-Tabelle eingetragen und fertig.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodle on Openshift one liner]]></title>

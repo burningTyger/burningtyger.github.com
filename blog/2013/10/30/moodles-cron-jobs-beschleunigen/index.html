@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hassle free secure tokens on Openshift - Some thoughts</title>
+  <title>Moodles cron jobs beschleunigen - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Openshift makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like Quickstarts. &hellip;">
+  <meta name="description" content="Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
+Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ generic repositories like Quickstarts. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +82,7 @@ generic repositories like Quickstarts. &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Hassle Free Secure Tokens on Openshift</h1>
+      <h1 class="entry-title">Moodles Cron Jobs Beschleunigen</h1>
     
     
       <p class="meta">
@@ -99,56 +98,37 @@ generic repositories like Quickstarts. &hellip;">
   
 
 
-<time datetime="2013-01-10T15:01:00+01:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
+<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>
+<div class="entry-content"><p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
+Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
+cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
+und hier kommt der Clou, direkt mit php aufrufen kann. Lässt man das dann alle
+paar Minuten über cron laufen, dann macht das einen erheblichen Unterschied aus.
+Der Test mit einer kleineren Installation ergab, dass ein Apache-Aufruf etwa
+20 Sekunden in Anspruch nahm, der direkte Aufruf schon nach etwa 4 Sekunden
+erledigt war. Das war also eine Steigerung von über 500%, von der Schonung
+weiterer Ressourcen spreche ich noch gar nicht. Wenn man den Unterschied bei
+NewRelic beobachtet, sieht man schön, dass die Anfragen an die Datenbank und an
+den Server im allgemeinen bedeutend nachlassen.</p>
 
-<p>You create an app, everybody who likes it pulls it into their Openshift
-repository and deploys it. Usually everything is ok but
-<a href="https://openshift.redhat.com/community/developers/get-involved/creating-quickstarts">sometimes</a>
-you need to create a secure token to have an extra layer of security.</p>
+<p>In meiner Installation unter Ubuntu 12.04 sah der Aufruf mit der cron Tabelle
+wie folgt aus:</p>
 
-<p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
-secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn&#8217;t want to create a config file that needs to be manually changed
-by the user so I thought of something else:</p>
-
-<pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
-  require 'securerandom'
-  if File.exist? 'token'
-    token = File.open('token').read
-  else
-    token = SecureRandom.base64(64)
-    File.open('token', 'w') { |file| file.write(token) }
-  end
-  puts token
-")"
+<pre><code>*/10 * * * * php -q -f /usr/share/nginx/www/moodle/admin/cli/cron.php
 </code></pre>
 
-<p>This little script goes into one of the <code>action_hooks</code> that are sourced
-by the app.</p>
+<p>Das wars, wird mittels:</p>
 
-<p>In case of my Moodle repo I put it into
-<code>.openshift/action_hooks/pre_start_php-5.3</code>. For other apps you will
-have to use the appropriate cartridge name instead (i.e ruby-1.9 etc.).</p>
+<pre><code>crontab -e
+</code></pre>
 
-<p>What this script does it runs an inline Ruby script that checks if a
-token file exists in your data dir and reads it. If not, it creates one
-and writes a random string into it.</p>
-
-<p>After that it writes the string to STDOUT when it is set to
-<code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app&#8217;s config files without manually entering a string yourself.</p>
-
-<p>If you need to migrate your app from somewhere else to Openshift you can
-still use this script and just set via SSH the string in <code>token</code>.</p>
+<p>in die cron-Tabelle eingetragen und fertig.</p>
 </div>
 
 
@@ -171,12 +151,12 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
   
 
 
-<time datetime="2013-01-10T15:01:00+01:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
+<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/moodle/'>moodle</a>, <a class='category' href='/blog/categories/openshift/'>openshift</a>, <a class='category' href='/blog/categories/security/'>security</a>
+    <a class='category' href='/blog/categories/moodle/'>moodle</a>
   
 </span>
 
@@ -185,7 +165,7 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" >Tweet</a>
   
   
   
@@ -194,10 +174,8 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/" title="Previous Post: Installing a custom translation for Instructure's Canvas">&laquo; Installing a custom translation for Instructure's Canvas</a>
+        <a class="basic-alignment left" href="/blog/2013/02/10/moodle-on-openshift-one-liner/" title="Previous Post: Moodle on Openshift one liner">&laquo; Moodle on Openshift one liner</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/01/16/custom-config-files-in-openshift-submodules/" title="Next Post: Custom config files in Openshift submodules">Custom config files in Openshift submodules &raquo;</a>
       
     </p>
   </footer>
