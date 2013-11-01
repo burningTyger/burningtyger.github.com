@@ -4,7 +4,7 @@
   <title><![CDATA[Category: moodle | Some thoughts]]></title>
   <link href="http://burningTyger.github.com/blog/categories/moodle/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-10-30T20:41:38+01:00</updated>
+  <updated>2013-11-01T18:36:44+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Moodle Datenbankmigration]]></title>
+    <link href="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/"/>
+    <updated>2013-11-01T18:29:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration</id>
+    <content type="html"><![CDATA[<p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodles cron jobs beschleunigen]]></title>
@@ -241,57 +250,6 @@ and copied it upon deployment to the submodule folder:</p>
 manually move files or change the submodule via SSH. The config file can be
 added to the Openshift repository and tracked there. A very clean solution if
 you ask me.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hassle free secure tokens on Openshift]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/"/>
-    <updated>2013-01-10T15:01:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift</id>
-    <content type="html"><![CDATA[<p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>
-
-<p>You create an app, everybody who likes it pulls it into their Openshift
-repository and deploys it. Usually everything is ok but
-<a href="https://openshift.redhat.com/community/developers/get-involved/creating-quickstarts">sometimes</a>
-you need to create a secure token to have an extra layer of security.</p>
-
-<p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
-secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn't want to create a config file that needs to be manually changed
-by the user so I thought of something else:</p>
-
-<pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
-  require 'securerandom'
-  if File.exist? 'token'
-    token = File.open('token').read
-  else
-    token = SecureRandom.base64(64)
-    File.open('token', 'w') { |file| file.write(token) }
-  end
-  puts token
-")"
-</code></pre>
-
-<p>This little script goes into one of the <code>action_hooks</code> that are sourced
-by the app.</p>
-
-<p>In case of my Moodle repo I put it into
-<code>.openshift/action_hooks/pre_start_php-5.3</code>. For other apps you will
-have to use the appropriate cartridge name instead (i.e ruby-1.9 etc.).</p>
-
-<p>What this script does it runs an inline Ruby script that checks if a
-token file exists in your data dir and reads it. If not, it creates one
-and writes a random string into it.</p>
-
-<p>After that it writes the string to STDOUT when it is set to
-<code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app's config files without manually entering a string yourself.</p>
-
-<p>If you need to migrate your app from somewhere else to Openshift you can
-still use this script and just set via SSH the string in <code>token</code>.</p>
 ]]></content>
   </entry>
   

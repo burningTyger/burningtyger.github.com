@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Installing a custom translation for Instructure's Canvas - Some thoughts</title>
+  <title>Moodle Datenbankmigration - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="You can find their repos here over at @instructure. Canvas is an
-interesting Ruby on Rails Learning management system that looks a lot
-cleaner than &hellip;">
+  <meta name="description" content="Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ cleaner than &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +81,7 @@ cleaner than &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Installing a Custom Translation for Instructure's Canvas</h1>
+      <h1 class="entry-title">Moodle Datenbankmigration</h1>
     
     
       <p class="meta">
@@ -99,51 +97,14 @@ cleaner than &hellip;">
   
 
 
-<time datetime="2013-01-04T00:14:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
+<time datetime="2013-11-01T18:29:00+01:00" pubdate data-updated="true">Nov 1<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>You can find their repos here over at @instructure. Canvas is an
-interesting Ruby on Rails Learning management system that looks a lot
-cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
-still promising. Provided with the default language English there is
-Spanish and Russian available.</p>
-
-<p>If you want to add your own translation first check if there is already
-a complete translation available over at
-<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
-translation community. Right now there are some other languages
-available, German for example is complete. You can download a
-translation and use it in your project.</p>
-
-<p>German example:</p>
-
-<p>rename the file to de.yml and place it in your locale folder</p>
-
-<pre><code>cp de.yml canvas/config/locales/
-</code></pre>
-
-<p>edit the locales.yml file so that it looks like this:</p>
-
-<pre><code>en:
-  locales:
-    en: English
-es:
-  locales:
-    es: Español
-ru:
-  locales:
-    ru: ру́сский
-de:
-  locales:
-    de: Deutsch
-</code></pre>
-
-<p>after that you need to restart your app and set the language to German
-in your site settings.</p>
+<div class="entry-content"><p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
 </div>
 
 
@@ -166,15 +127,21 @@ in your site settings.</p>
   
 
 
-<time datetime="2013-01-04T00:14:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
+<time datetime="2013-11-01T18:29:00+01:00" pubdate data-updated="true">Nov 1<span>st</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/moodle/'>moodle</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/" >Tweet</a>
   
   
   
@@ -183,8 +150,8 @@ in your site settings.</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" title="Previous Post: Moodles cron jobs beschleunigen">&laquo; Moodles cron jobs beschleunigen</a>
       
-        <a class="basic-alignment right" href="/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/" title="Next Post: Hassle free secure tokens on Openshift">Hassle free secure tokens on Openshift &raquo;</a>
       
     </p>
   </footer>

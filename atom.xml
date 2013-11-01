@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2013-10-30T20:41:38+01:00</updated>
+  <updated>2013-11-01T18:36:44+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Moodle Datenbankmigration]]></title>
+    <link href="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/"/>
+    <updated>2013-11-01T18:29:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration</id>
+    <content type="html"><![CDATA[<p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodles cron jobs beschleunigen]]></title>

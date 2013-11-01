@@ -9,8 +9,7 @@
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
-Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip;">
+  <meta name="description" content="Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +78,42 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/01/moodle-datenbankmigration/">Moodle Datenbankmigration</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-01T18:29:00+01:00" pubdate data-updated="true">Nov 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -583,6 +618,10 @@ in your site settings.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/01/moodle-datenbankmigration/">Moodle Datenbankmigration</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/30/moodles-cron-jobs-beschleunigen/">Moodles cron jobs beschleunigen</a>
       </li>
     
@@ -596,10 +635,6 @@ in your site settings.</p>
     
       <li class="post">
         <a href="/blog/2013/01/16/custom-config-files-in-openshift-submodules/">Custom config files in Openshift submodules</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/">Hassle free secure tokens on Openshift</a>
       </li>
     
   </ul>
