@@ -9,7 +9,9 @@
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein &hellip;">
+  <meta name="description" content="Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
+den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
+dann &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +80,182 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/">DD-WRT Router Hinter Unitymedia-Kabelnetz</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-05T11:56:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
+den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
+dann wird es mit der Verbindung in den meisten Fällen nicht klappen,
+weil Unitymedia die MAC nicht akzeptiert. Dafür gibt es eine einfache
+Lösung, Mac-Cloning. D.h. man trägt in die MAC Einstellungen des Routers
+die MAC Adresse des Modems ein und schon klappt die Verbindung mit dem
+WAN von Unitymedia. Dazu geht man in dd-wrt auf Setup / MAC Address
+Clone und trägt in die erste Zeile die Modemadresse ein. Dazu noch Mac
+Clone enable anklicken. Eventuell muss man Router und Modem neu starten,
+damit der Router die WAN-Adresse bekommt.</p>
+
+<p>Das gleiche gilt übrigens auch für eine FritzBox, die man ebenfalls
+hinter einem Unitymedia-Kabelmodem betreiben kann.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/">DD-WRT Auf Einem TP-Link WDR4900 V1 Router Installieren</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-05T11:41:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
+viel. Leider gibt es kaum Informationen zu finden, wie man es
+installiert. Da man aber auch viel kaputt machen kann, gebe ich kurz die
+ersten Schritte an.</p>
+
+<p>In den Foren und auf den Infoseiten stehen wichtige Details zur
+alternativen Firmware. Die sollten schon gelesen werden. Wenn etwas
+schiefgeht, ich bin nicht schuld daran!</p>
+
+<p>Um den Router zu flashen wird beim ersten Mal eine besondere Datei
+benötigt, die sich hier befindet:
+[ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/]
+(ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/)
+Lade <code>factory-to-ddwrt.bin</code> herunter und lade es als Firmwareupgrade im
+Browser in den Router hoch. Der Router wird es als Firmware erkennen und
+das Gerät flashen. Vorher empfiehlt dd-wrt den Router vollständig
+zurückzusetzen.</p>
+
+<p>Für spätere Upgrades der dd-wrt Firmware muss die andere Datei verwendet
+werden <code>tl-wdr4900-webflash.bin</code>.</p>
+
+<p>Leider ist die dd-wrt Weboberfläche alles andere als stabil und stürzt
+häufig ab. Dafür ist es sinnvoll, wenn man sich ssh auf dem Gerät
+einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/">How to Fix a Corrupt Mac OS X Hard Drive (Catolog)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-05T11:19:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
+tells you so or because you checked your hard drive in Disk Utils.</p>
+
+<p>If it is broken to some degree Disk Utils will let you fix them or tells
+you to reformat your hard drive. In some cases that is not an option.</p>
+
+<p>In my case I had a broken hard drive that wouldn&#8217;t let me resize the
+partitions and I wasn&#8217;t able to install Linux on a separate partition.
+Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
+to run DiskUtils from another drive. Runing the Disk Utils from the
+recovery partition didn&#8217;t let me fix or reformat the hard drive either
+(because it&#8217;s on the same hard drive after all) and the internet
+recovery mode didn&#8217;t even start. Neither the USB recovery disk I
+created.</p>
+
+<p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
+I also intended to install on my main Mac. It offers gparted, the Linux
+partition manager. Running that from another medium brought hope to
+fixing the hard drive partition mess. It failed. It said something about
+a corrupt catalog on the mac partition and wasn&#8217;t able to fix it. Not
+being able to fix the problem in one place also meant no resizing the
+partition in the other place. And I was stuck with the same old disk.</p>
+
+<p>Turning out to be even smarter than that I remembered single mode for my
+Mac. I rebooted the Mac and started up in single mode. Now this has two
+advantages: first it is the system loaded in memory and second it has
+all the mac specific tools on board (unlike gparted with Linux tools).
+Running fsck on the mac partition worked its way through broken b-trees
+and corrupt catalog data and in the end I had a working hard drive with
+no more errors and I was able to resize the partition to create free
+space on it which Lubuntu magically filled with Linux.</p>
+
+<p>I don&#8217;t exacly remember the fsck comman I used but it was something
+simple. Like, fix that partition when you find errors.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -625,80 +803,9 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">Installing a Custom Translation for Instructure&#8217;s Canvas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-04T00:14:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You can find their repos here over at @instructure. Canvas is an
-interesting Ruby on Rails Learning management system that looks a lot
-cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
-still promising. Provided with the default language English there is
-Spanish and Russian available.</p>
-
-<p>If you want to add your own translation first check if there is already
-a complete translation available over at
-<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
-translation community. Right now there are some other languages
-available, German for example is complete. You can download a
-translation and use it in your project.</p>
-
-<p>German example:</p>
-
-<p>rename the file to de.yml and place it in your locale folder</p>
-
-<pre><code>cp de.yml canvas/config/locales/
-</code></pre>
-
-<p>edit the locales.yml file so that it looks like this:</p>
-
-<pre><code>en:
-  locales:
-    en: English
-es:
-  locales:
-    es: Español
-ru:
-  locales:
-    ru: ру́сский
-de:
-  locales:
-    de: Deutsch
-</code></pre>
-
-<p>after that you need to restart your app and set the language to German
-in your site settings.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -711,23 +818,23 @@ in your site settings.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/">DD-WRT Router hinter Unitymedia-Kabelnetz</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/">DD-WRT auf einem TP-Link WDR4900 V1 Router installieren</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/">How to fix a corrupt Mac OS X hard drive (catolog)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/11/01/moodle-datenbankmigration/">Moodle Datenbankmigration</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/30/moodles-cron-jobs-beschleunigen/">Moodles cron jobs beschleunigen</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/10/moodle-on-openshift-one-liner/">Moodle on Openshift one liner</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/01/moodle-auf-openshift-betreiben/">Moodle auf Openshift betreiben</a>
       </li>
     
   </ul>
@@ -749,7 +856,7 @@ in your site settings.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - burningTyger -
+  Copyright &copy; 2014 - burningTyger -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

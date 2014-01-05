@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195 - Some thoughts</title>
+  <title>DD-WRT auf einem TP-Link WDR4900 V1 Router installieren - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein &hellip;">
+  <meta name="description" content="Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
+viel. Leider gibt es kaum Informationen zu finden, wie man es
+installiert. Da &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">Cyanogenmod 11 Auf Dem Samsung Galaxy S4 Mini GT-I9195</h1>
+      <h1 class="entry-title">DD-WRT Auf Einem TP-Link WDR4900 V1 Router Installieren</h1>
     
     
       <p class="meta">
@@ -97,71 +99,37 @@
   
 
 
-<time datetime="2013-12-19T16:55:00+01:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2014-01-05T11:41:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein Telefon unbrauchbar geworden ist, es ist deine persönliche Verantwortung.</p>
+<div class="entry-content"><p>Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
+viel. Leider gibt es kaum Informationen zu finden, wie man es
+installiert. Da man aber auch viel kaputt machen kann, gebe ich kurz die
+ersten Schritte an.</p>
 
-<p>Überblick: http://wiki.cyanogenmod.org/w/Serranoltexx_Info
-Installieren: http://wiki.cyanogenmod.org/w/Install_CM_for_serranoltexx
-Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
+<p>In den Foren und auf den Infoseiten stehen wichtige Details zur
+alternativen Firmware. Die sollten schon gelesen werden. Wenn etwas
+schiefgeht, ich bin nicht schuld daran!</p>
 
-<p>Es wird keine SD-Karte gebraucht, der interne Speicher reicht aus, um CM-11 zu flashen.</p>
+<p>Um den Router zu flashen wird beim ersten Mal eine besondere Datei
+benötigt, die sich hier befindet:
+[ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/]
+(ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/)
+Lade <code>factory-to-ddwrt.bin</code> herunter und lade es als Firmwareupgrade im
+Browser in den Router hoch. Der Router wird es als Firmware erkennen und
+das Gerät flashen. Vorher empfiehlt dd-wrt den Router vollständig
+zurückzusetzen.</p>
 
-<p>CM-11 ist noch Alpha. Es läuft aber ok. Also los.</p>
+<p>Für spätere Upgrades der dd-wrt Firmware muss die andere Datei verwendet
+werden <code>tl-wdr4900-webflash.bin</code>.</p>
 
-<p>Folgende Downloads werden benötigt:</p>
-
-<ul>
-<li>ClockworkMod Recovery (http://cmw.cmfs.me/jf/recovery-clockwork-6.0.4.5-serranoltexx.tar.zip)</li>
-<li>Heimdall (http://www.glassechidna.com.au/products/heimdall/)</li>
-<li>CyanogenMod 11 (http://get.cm/?device=serranoltexx)</li>
-<li>gapps (http://itvends.com/gapps/gapps-kk-20131208.zip)</li>
-</ul>
-
-
-<p>Bitte unter den zwei Installieren Links die aktuelle Version auswählen.</p>
-
-<p>Vor der Installation empfiehlt es sich, den Telefonspeicher zu sichern, d.h. SMS und Anrufe in einer Datenbank abzulegen, damit man sie später wieder einspielen kann. Gleiches gilt für die installierten Apps, die man sicher gerne wieder haben möchte.</p>
-
-<p>Alle sind im Market zu finden:
-* AppBak
-* SMS Backup and Restore
-* Call Logs Backup and Restore</p>
-
-<p>Die anderen App-Daten, die bisher angelegt wurden, werden beim Flashen nicht gelöscht. Dafür aber alle Accounts. Es macht Sinn, sich vorher alle zu notieren, damit man hinterher nicht anfängt zu suchen, wenn man sich für alle Dienste neu einloggen muss.</p>
-
-<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden.</p>
-
-<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte recovery.img vorhanden sein).</p>
-
-<p>CyanogenMod auf /sdcard kopieren – auf dem s4 mini ist das ein interner Speicher.</p>
-
-<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1):</p>
-
-<ul>
-<li>S4 mini ausschalten</li>
-<li>Verbindungskabel an den Mac anschließen, aber noch nicht ans Telefon</li>
-<li>S4 mini im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
-<li>im Terminal <code>heimdall flash --RECOVERY recovery.img --no-reboot</code></li>
-<li>Das S4 mini startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
-<li>Das S4 mini neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
-<li>S4 mini ist nun im Recovery-Modus und man kann CM-11 installieren</li>
-<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
-<li>data und cache wipe starten</li>
-<li>install zip from sdcard auswählen</li>
-<li>choose zip from sdcard, um die Firmware auszuwählen</li>
-<li>CM-11 wird installiert.</li>
-<li>Mit gapps das gleiche wiederholen</li>
-<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
-</ul>
-
-
-<p>Nun mit Hilfe der SMS- und Anrufwiederherstellung beides zurück aufs Telefon holen und fertig ist die Sache.</p>
+<p>Leider ist die dd-wrt Weboberfläche alles andere als stabil und stürzt
+häufig ab. Dafür ist es sinnvoll, wenn man sich ssh auf dem Gerät
+einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
 </div>
 
 
@@ -184,12 +152,12 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
   
 
 
-<time datetime="2013-12-19T16:55:00+01:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2014-01-05T11:41:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cyanogenmod/'>cyanogenmod</a>, <a class='category' href='/blog/categories/i9195-/'>i9195,</a>, <a class='category' href='/blog/categories/samsung-/'>samsung,</a>
+    <a class='category' href='/blog/categories/ddwrt/'>ddwrt</a>, <a class='category' href='/blog/categories/router-/'>router,</a>
   
 </span>
 
@@ -198,7 +166,7 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/" data-via="" data-counturl="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/" >Tweet</a>
   
   
   
@@ -207,10 +175,10 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/11/01/moodle-datenbankmigration/" title="Previous Post: Moodle Datenbankmigration">&laquo; Moodle Datenbankmigration</a>
+        <a class="basic-alignment left" href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/" title="Previous Post: How to fix a corrupt Mac OS X hard drive (catolog)">&laquo; How to fix a corrupt Mac OS X hard drive (catolog)</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/" title="Next Post: How to fix a corrupt Mac OS X hard drive (catolog)">How to fix a corrupt Mac OS X hard drive (catolog) &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/" title="Next Post: DD-WRT Router hinter Unitymedia-Kabelnetz">DD-WRT Router hinter Unitymedia-Kabelnetz &raquo;</a>
       
     </p>
   </footer>

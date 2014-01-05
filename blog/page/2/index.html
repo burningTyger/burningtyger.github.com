@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Moodles cron jobs beschleunigen - Some thoughts</title>
+  <title>Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
-Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip;">
+  <meta name="description" content="You can find their repos here over at @instructure. Canvas is an
+interesting Ruby on Rails Learning management system that looks a lot
+cleaner than &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,12 +78,15 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">Moodles Cron Jobs Beschleunigen</h1>
+      <h1 class="entry-title"><a href="/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/">Installing a Custom Translation for Instructure&#8217;s Canvas</a></h1>
     
     
       <p class="meta">
@@ -98,93 +102,66 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
   
 
 
-<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
+<time datetime="2013-01-04T00:14:00+01:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
-Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
-cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
-und hier kommt der Clou, direkt mit php aufrufen kann. Lässt man das dann alle
-paar Minuten über cron laufen, dann macht das einen erheblichen Unterschied aus.
-Der Test mit einer kleineren Installation ergab, dass ein Apache-Aufruf etwa
-20 Sekunden in Anspruch nahm, der direkte Aufruf schon nach etwa 4 Sekunden
-erledigt war. Das war also eine Steigerung von über 500%, von der Schonung
-weiterer Ressourcen spreche ich noch gar nicht. Wenn man den Unterschied bei
-NewRelic beobachtet, sieht man schön, dass die Anfragen an die Datenbank und an
-den Server im allgemeinen bedeutend nachlassen.</p>
+  <div class="entry-content"><p>You can find their repos here over at @instructure. Canvas is an
+interesting Ruby on Rails Learning management system that looks a lot
+cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
+still promising. Provided with the default language English there is
+Spanish and Russian available.</p>
 
-<p>In meiner Installation unter Ubuntu 12.04 sah der Aufruf mit der cron Tabelle
-wie folgt aus:</p>
+<p>If you want to add your own translation first check if there is already
+a complete translation available over at
+<a href="https://www.transifex.com/projects/p/canvas-lms/">Transifex</a> the
+translation community. Right now there are some other languages
+available, German for example is complete. You can download a
+translation and use it in your project.</p>
 
-<pre><code>*/10 * * * * php -q -f /usr/share/nginx/www/moodle/admin/cli/cron.php
+<p>German example:</p>
+
+<p>rename the file to de.yml and place it in your locale folder</p>
+
+<pre><code>cp de.yml canvas/config/locales/
 </code></pre>
 
-<p>Das wars, wird mittels:</p>
+<p>edit the locales.yml file so that it looks like this:</p>
 
-<pre><code>crontab -e
+<pre><code>en:
+  locales:
+    en: English
+es:
+  locales:
+    es: Español
+ru:
+  locales:
+    ru: ру́сский
+de:
+  locales:
+    de: Deutsch
 </code></pre>
 
-<p>in die cron-Tabelle eingetragen und fertig.</p>
+<p>after that you need to restart your app and set the language to German
+in your site settings.</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">burningTyger</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
-      
-
-<span class="categories">
+    </article>
   
-    <a class='category' href='/blog/categories/moodle/'>moodle</a>
-  
-</span>
-
-
-    </p>
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" >Tweet</a>
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/02/10/moodle-on-openshift-one-liner/" title="Previous Post: Moodle on Openshift one liner">&laquo; Moodle on Openshift one liner</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/11/01/moodle-datenbankmigration/" title="Next Post: Moodle Datenbankmigration">Moodle Datenbankmigration &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -215,7 +192,7 @@ wie folgt aus:</p>
 </section>
 <section>
   <h1>About Me</h1>
-  <p>I document and translate Ruby: MRI, Sinatra, Rubinius, and even Rails. I'm the creator of <a href="http://farhang.im">farhang.im</a> the German-Persian open source dictionary app.</p>
+  <p>I document and translate Ruby: MRI, Sinatra, Rubinius, and even Rails. I&#8217;m the creator of <a href="http://farhang.im">farhang.im</a> the German-Persian open source dictionary app.</p>
   <p><a href="https://github.com/burningTyger">@burningTyger</a> on GitHub</p>
 </section>
 
@@ -226,7 +203,6 @@ wie folgt aus:</p>
 
   
 </aside>
-
 
     </div>
   </div>

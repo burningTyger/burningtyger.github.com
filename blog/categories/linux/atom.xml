@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.com/"/>
+  <updated>2014-01-05T12:01:09+01:00</updated>
+  <id>http://burningTyger.github.com/</id>
+  <author>
+    <name><![CDATA[burningTyger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to fix a corrupt Mac OS X hard drive (catolog)]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
+    <updated>2014-01-05T11:19:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
+    <content type="html"><![CDATA[<p>Usually you won't notice a corrupt hard drive under Mac OS X unless it
+tells you so or because you checked your hard drive in Disk Utils.</p>
+
+<p>If it is broken to some degree Disk Utils will let you fix them or tells
+you to reformat your hard drive. In some cases that is not an option.</p>
+
+<p>In my case I had a broken hard drive that wouldn't let me resize the
+partitions and I wasn't able to install Linux on a separate partition.
+Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
+to run DiskUtils from another drive. Runing the Disk Utils from the
+recovery partition didn't let me fix or reformat the hard drive either
+(because it's on the same hard drive after all) and the internet
+recovery mode didn't even start. Neither the USB recovery disk I
+created.</p>
+
+<p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
+I also intended to install on my main Mac. It offers gparted, the Linux
+partition manager. Running that from another medium brought hope to
+fixing the hard drive partition mess. It failed. It said something about
+a corrupt catalog on the mac partition and wasn't able to fix it. Not
+being able to fix the problem in one place also meant no resizing the
+partition in the other place. And I was stuck with the same old disk.</p>
+
+<p>Turning out to be even smarter than that I remembered single mode for my
+Mac. I rebooted the Mac and started up in single mode. Now this has two
+advantages: first it is the system loaded in memory and second it has
+all the mac specific tools on board (unlike gparted with Linux tools).
+Running fsck on the mac partition worked its way through broken b-trees
+and corrupt catalog data and in the end I had a working hard drive with
+no more errors and I was able to resize the partition to create free
+space on it which Lubuntu magically filled with Linux.</p>
+
+<p>I don't exacly remember the fsck comman I used but it was something
+simple. Like, fix that partition when you find errors.</p>
+]]></content>
+  </entry>
+  
+</feed>

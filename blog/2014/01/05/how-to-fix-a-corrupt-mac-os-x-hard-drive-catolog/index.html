@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195 - Some thoughts</title>
+  <title>How to fix a corrupt Mac OS X hard drive (catolog) - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein &hellip;">
+  <meta name="description" content="Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
+tells you so or because you checked your hard drive in Disk Utils. If it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Cyanogenmod 11 Auf Dem Samsung Galaxy S4 Mini GT-I9195</h1>
+      <h1 class="entry-title">How to Fix a Corrupt Mac OS X Hard Drive (Catolog)</h1>
     
     
       <p class="meta">
@@ -97,71 +98,47 @@
   
 
 
-<time datetime="2013-12-19T16:55:00+01:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2014-01-05T11:19:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein Telefon unbrauchbar geworden ist, es ist deine persönliche Verantwortung.</p>
+<div class="entry-content"><p>Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
+tells you so or because you checked your hard drive in Disk Utils.</p>
 
-<p>Überblick: http://wiki.cyanogenmod.org/w/Serranoltexx_Info
-Installieren: http://wiki.cyanogenmod.org/w/Install_CM_for_serranoltexx
-Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
+<p>If it is broken to some degree Disk Utils will let you fix them or tells
+you to reformat your hard drive. In some cases that is not an option.</p>
 
-<p>Es wird keine SD-Karte gebraucht, der interne Speicher reicht aus, um CM-11 zu flashen.</p>
+<p>In my case I had a broken hard drive that wouldn&#8217;t let me resize the
+partitions and I wasn&#8217;t able to install Linux on a separate partition.
+Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
+to run DiskUtils from another drive. Runing the Disk Utils from the
+recovery partition didn&#8217;t let me fix or reformat the hard drive either
+(because it&#8217;s on the same hard drive after all) and the internet
+recovery mode didn&#8217;t even start. Neither the USB recovery disk I
+created.</p>
 
-<p>CM-11 ist noch Alpha. Es läuft aber ok. Also los.</p>
+<p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
+I also intended to install on my main Mac. It offers gparted, the Linux
+partition manager. Running that from another medium brought hope to
+fixing the hard drive partition mess. It failed. It said something about
+a corrupt catalog on the mac partition and wasn&#8217;t able to fix it. Not
+being able to fix the problem in one place also meant no resizing the
+partition in the other place. And I was stuck with the same old disk.</p>
 
-<p>Folgende Downloads werden benötigt:</p>
+<p>Turning out to be even smarter than that I remembered single mode for my
+Mac. I rebooted the Mac and started up in single mode. Now this has two
+advantages: first it is the system loaded in memory and second it has
+all the mac specific tools on board (unlike gparted with Linux tools).
+Running fsck on the mac partition worked its way through broken b-trees
+and corrupt catalog data and in the end I had a working hard drive with
+no more errors and I was able to resize the partition to create free
+space on it which Lubuntu magically filled with Linux.</p>
 
-<ul>
-<li>ClockworkMod Recovery (http://cmw.cmfs.me/jf/recovery-clockwork-6.0.4.5-serranoltexx.tar.zip)</li>
-<li>Heimdall (http://www.glassechidna.com.au/products/heimdall/)</li>
-<li>CyanogenMod 11 (http://get.cm/?device=serranoltexx)</li>
-<li>gapps (http://itvends.com/gapps/gapps-kk-20131208.zip)</li>
-</ul>
-
-
-<p>Bitte unter den zwei Installieren Links die aktuelle Version auswählen.</p>
-
-<p>Vor der Installation empfiehlt es sich, den Telefonspeicher zu sichern, d.h. SMS und Anrufe in einer Datenbank abzulegen, damit man sie später wieder einspielen kann. Gleiches gilt für die installierten Apps, die man sicher gerne wieder haben möchte.</p>
-
-<p>Alle sind im Market zu finden:
-* AppBak
-* SMS Backup and Restore
-* Call Logs Backup and Restore</p>
-
-<p>Die anderen App-Daten, die bisher angelegt wurden, werden beim Flashen nicht gelöscht. Dafür aber alle Accounts. Es macht Sinn, sich vorher alle zu notieren, damit man hinterher nicht anfängt zu suchen, wenn man sich für alle Dienste neu einloggen muss.</p>
-
-<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden.</p>
-
-<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte recovery.img vorhanden sein).</p>
-
-<p>CyanogenMod auf /sdcard kopieren – auf dem s4 mini ist das ein interner Speicher.</p>
-
-<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1):</p>
-
-<ul>
-<li>S4 mini ausschalten</li>
-<li>Verbindungskabel an den Mac anschließen, aber noch nicht ans Telefon</li>
-<li>S4 mini im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
-<li>im Terminal <code>heimdall flash --RECOVERY recovery.img --no-reboot</code></li>
-<li>Das S4 mini startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
-<li>Das S4 mini neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
-<li>S4 mini ist nun im Recovery-Modus und man kann CM-11 installieren</li>
-<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
-<li>data und cache wipe starten</li>
-<li>install zip from sdcard auswählen</li>
-<li>choose zip from sdcard, um die Firmware auszuwählen</li>
-<li>CM-11 wird installiert.</li>
-<li>Mit gapps das gleiche wiederholen</li>
-<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
-</ul>
-
-
-<p>Nun mit Hilfe der SMS- und Anrufwiederherstellung beides zurück aufs Telefon holen und fertig ist die Sache.</p>
+<p>I don&#8217;t exacly remember the fsck comman I used but it was something
+simple. Like, fix that partition when you find errors.</p>
 </div>
 
 
@@ -184,12 +161,12 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
   
 
 
-<time datetime="2013-12-19T16:55:00+01:00" pubdate data-updated="true">Dec 19<span>th</span>, 2013</time>
+<time datetime="2014-01-05T11:19:00+01:00" pubdate data-updated="true">Jan 5<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/cyanogenmod/'>cyanogenmod</a>, <a class='category' href='/blog/categories/i9195-/'>i9195,</a>, <a class='category' href='/blog/categories/samsung-/'>samsung,</a>
+    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/mac-/'>mac,</a>
   
 </span>
 
@@ -198,7 +175,7 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/" data-via="" data-counturl="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/" >Tweet</a>
   
   
   
@@ -207,10 +184,10 @@ Installieren 2: http://forum.xda-developers.com/showthread.php?t=2558685</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/11/01/moodle-datenbankmigration/" title="Previous Post: Moodle Datenbankmigration">&laquo; Moodle Datenbankmigration</a>
+        <a class="basic-alignment left" href="/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/" title="Previous Post: Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195">&laquo; Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195</a>
       
       
-        <a class="basic-alignment right" href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/" title="Next Post: How to fix a corrupt Mac OS X hard drive (catolog)">How to fix a corrupt Mac OS X hard drive (catolog) &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/" title="Next Post: DD-WRT auf einem TP-Link WDR4900 V1 Router installieren">DD-WRT auf einem TP-Link WDR4900 V1 Router installieren &raquo;</a>
       
     </p>
   </footer>

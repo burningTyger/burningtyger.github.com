@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Moodles cron jobs beschleunigen - Some thoughts</title>
+  <title>Category: ddwrt - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
-Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip;">
+  <meta name="description" content="Category: ddwrt">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/">
+  <link rel="canonical" href="http://burningTyger.github.comblog/categories/ddwrt/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -78,109 +77,35 @@ Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung &hellip
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Moodles Cron Jobs Beschleunigen</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Ddwrt</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
-Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
-cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
-und hier kommt der Clou, direkt mit php aufrufen kann. Lässt man das dann alle
-paar Minuten über cron laufen, dann macht das einen erheblichen Unterschied aus.
-Der Test mit einer kleineren Installation ergab, dass ein Apache-Aufruf etwa
-20 Sekunden in Anspruch nahm, der direkte Aufruf schon nach etwa 4 Sekunden
-erledigt war. Das war also eine Steigerung von über 500%, von der Schonung
-weiterer Ressourcen spreche ich noch gar nicht. Wenn man den Unterschied bei
-NewRelic beobachtet, sieht man schön, dass die Anfragen an die Datenbank und an
-den Server im allgemeinen bedeutend nachlassen.</p>
 
-<p>In meiner Installation unter Ubuntu 12.04 sah der Aufruf mit der cron Tabelle
-wie folgt aus:</p>
+  
+  <h2>2014</h2>
 
-<pre><code>*/10 * * * * php -q -f /usr/share/nginx/www/moodle/admin/cli/cron.php
-</code></pre>
+<article>
+  
+<h1><a href="/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/">DD-WRT auf einem TP-Link WDR4900 V1 Router installieren</a></h1>
+<time datetime="2014-01-05T11:41:00+01:00" pubdate><span class='month'>Jan</span> <span class='day'>05</span> <span class='year'>2014</span></time>
 
-<p>Das wars, wird mittels:</p>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/ddwrt/'>ddwrt</a>, <a class='category' href='/blog/categories/router-/'>router,</a></span>
+</footer>
 
-<pre><code>crontab -e
-</code></pre>
 
-<p>in die cron-Tabelle eingetragen und fertig.</p>
+</article>
+
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">burningTyger</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-30T20:33:00+01:00" pubdate data-updated="true">Oct 30<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/moodle/'>moodle</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/02/10/moodle-on-openshift-one-liner/" title="Previous Post: Moodle on Openshift one liner">&laquo; Moodle on Openshift one liner</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/11/01/moodle-datenbankmigration/" title="Next Post: Moodle Datenbankmigration">Moodle Datenbankmigration &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

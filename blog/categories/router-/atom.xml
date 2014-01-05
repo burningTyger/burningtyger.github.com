@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: router, | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/router-/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.com/"/>
+  <updated>2014-01-05T12:01:09+01:00</updated>
+  <id>http://burningTyger.github.com/</id>
+  <author>
+    <name><![CDATA[burningTyger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DD-WRT auf einem TP-Link WDR4900 V1 Router installieren]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/"/>
+    <updated>2014-01-05T11:41:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren</id>
+    <content type="html"><![CDATA[<p>Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
+viel. Leider gibt es kaum Informationen zu finden, wie man es
+installiert. Da man aber auch viel kaputt machen kann, gebe ich kurz die
+ersten Schritte an.</p>
+
+<p>In den Foren und auf den Infoseiten stehen wichtige Details zur
+alternativen Firmware. Die sollten schon gelesen werden. Wenn etwas
+schiefgeht, ich bin nicht schuld daran!</p>
+
+<p>Um den Router zu flashen wird beim ersten Mal eine besondere Datei
+benötigt, die sich hier befindet:
+[ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/]
+(ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/)
+Lade <code>factory-to-ddwrt.bin</code> herunter und lade es als Firmwareupgrade im
+Browser in den Router hoch. Der Router wird es als Firmware erkennen und
+das Gerät flashen. Vorher empfiehlt dd-wrt den Router vollständig
+zurückzusetzen.</p>
+
+<p>Für spätere Upgrades der dd-wrt Firmware muss die andere Datei verwendet
+werden <code>tl-wdr4900-webflash.bin</code>.</p>
+
+<p>Leider ist die dd-wrt Weboberfläche alles andere als stabil und stürzt
+häufig ab. Dafür ist es sinnvoll, wenn man sich ssh auf dem Gerät
+einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
+]]></content>
+  </entry>
+  
+</feed>
