@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2014-01-05T12:24:03+01:00</updated>
+  <updated>2014-01-05T17:07:59+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -50,8 +50,8 @@ schiefgeht, ich bin nicht schuld daran!</p>
 
 <p>Um den Router zu flashen wird beim ersten Mal eine besondere Datei
 benötigt, die sich hier befindet:
-[ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/]
 (ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/)
+[ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/]
 Lade <code>factory-to-ddwrt.bin</code> herunter und lade es als Firmwareupgrade im
 Browser in den Router hoch. Der Router wird es als Firmware erkennen und
 das Gerät flashen. Vorher empfiehlt dd-wrt den Router vollständig
