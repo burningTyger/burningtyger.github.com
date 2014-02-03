@@ -9,9 +9,7 @@
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
-den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
-dann &hellip;">
+  <meta name="description" content="Der Ablauf ist im Prinzip der Selbe, wie schon im vorhergehenden Beitrag zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +78,92 @@ dann &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/">CyanogenMod 11 Auf Dem Samsung Galaxy Note 8 (N5110 WiFi)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-03T20:29:00+01:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Der Ablauf ist im Prinzip der Selbe, wie schon im vorhergehenden Beitrag zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es nochmal auf und gebe gleich die notwendigen Quellen mit an.</p>
+
+<p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es kein Halten mehr, das musste schleunigst wieder runter – wackelige Scrolls zwischen den Home Screens waren und sind unerträglich für so ein hochwertiges Tablett. Und einen Vorteil konnten man bei dem Update nicht erkennen.</p>
+
+<p>CyanogenMod 11 hat natürlich einen Nachteil für das Note 8, der Stift funktioniert an einigen Stellen nicht wie unter der OEM Firmware, das ist klar. Aber, diese Einschränkungen waren in meinem Fall minimal und unmerklich. Lediglich das Eingabefeld für Handschrift ist nicht mehr da, das fand ich interessant, habe es aber ehrlich gesagt nie benutzt. Obwohl es eigentlich recht cool war. Texterkennung ziemlich perfekt. Aber wenn man es nicht braucht, sollte es kein Grund sein, nicht darauf zu verzichten. Ersatz für S Note gibt es mit Quill. Quill ist mindestens so gut wie S Note und kann sogar Vektorgrafik. Dementsprechend sind Exporte nach PDF wesentlich kleiner und qualitativ hochwertiger als unter S Note, das nur Grafiken einbindet.</p>
+
+<p>Aber nun zur Installation.</p>
+
+<p>Hier vorab die Quellen, die man sich anschauen sollte:
+Der Thread bei xda-developers: http://forum.xda-developers.com/showthread.php?t=2523706
+Die Seite der Nightlies: http://download.cyanogenmod.org/?device=n5100
+Changelog zu den Nightlies: http://www.cmxlog.com/11/n5110/
+Link zu Heimdall: http://glassechidna.com.au/heimdall/
+Link zu TKruzze, der die Gapps bereitstellt: http://www.androidfilehost.com/profile.php?uid=23134718111252952
+Link zu ClockworkMod Recovery 0.6.4.4: http://www.androidfilehost.com/?fid=23212708291675367</p>
+
+<p>Die oben angegebenen Links können natürlich in der Zwischenzeit aktualisiert worden sein!</p>
+
+<p>So, bevor es losgeht, eine letzte Warnung: Wenn etwas kaputt geht, es ist nicht meine Schuld. Sicher Deine Accounts, nach dem Flashen muss alles neu installiert werden. App-Daten bleiben auf der internen Karte gespeichert, aber nicht immer klappt die automatische Verbindung der Daten. Ebenso werden alle Kontodaten von z.B. Google gelöscht.</p>
+
+<p>Zum Flashen von CyanogenMod braucht man keine externe SD-Karte, man kann sie nutzen, ebenso kann man aber auch die interne SD-Karte nutzen. CyanogenMod 11 Nightly runterladen und z.B. im Download-Ordner ablegen. Ebenso das Gapps Paket. Hier kann man wählen zwischen den Paketen. das Kleinste reicht, den Rest der Apps kann man über den Play Store nachinstallieren.</p>
+
+<p>Dann Das Note 8 ausschalten.</p>
+
+<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden. Auf Linux war das nicht nötig.</p>
+
+<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte recovery-0.6.4.4.img vorhanden sein).</p>
+
+<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1 und Ubuntu 13.10):</p>
+
+<ul>
+<li>Verbindungskabel am Rechner anschließen, aber noch nicht ans Tablet</li>
+<li>Note 8 im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
+<li>Nach der Warnung über das USB-Kabel verbinden und Ton lauter drücken</li>
+<li>im Terminal <code>heimdall flash --RECOVERY recovery-0.6.4.4.img --no-reboot</code> eingeben</li>
+<li>Das Tablet startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
+<li>Das Tablet neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
+<li>Note 8 ist nun im Recovery-Modus und man kann CM-11 installieren</li>
+<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
+<li>data und cache wipe starten</li>
+<li>install zip from sdcard auswählen</li>
+<li>choose zip from sdcard, um die Firmware auszuwählen</li>
+<li>CM-11 wird installiert.</li>
+<li>Mit gapps das gleiche wiederholen</li>
+<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
+</ul>
+
+
+<p>Das wars. Es geht insgesamt recht schnell, das Laden der einzelnen Programme und Vorbereiten des Flashens dauert wesentlich länger.</p>
+
+<p>Viel Spass.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -724,84 +808,6 @@ you ask me.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/">Hassle Free Secure Tokens on Openshift</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-10T15:01:00+01:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>
-
-<p>You create an app, everybody who likes it pulls it into their Openshift
-repository and deploys it. Usually everything is ok but
-<a href="https://openshift.redhat.com/community/developers/get-involved/creating-quickstarts">sometimes</a>
-you need to create a secure token to have an extra layer of security.</p>
-
-<p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
-secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn&#8217;t want to create a config file that needs to be manually changed
-by the user so I thought of something else:</p>
-
-<pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
-  require 'securerandom'
-  if File.exist? 'token'
-    token = File.open('token').read
-  else
-    token = SecureRandom.base64(64)
-    File.open('token', 'w') { |file| file.write(token) }
-  end
-  puts token
-")"
-</code></pre>
-
-<p>This little script goes into one of the <code>action_hooks</code> that are sourced
-by the app.</p>
-
-<p>In case of my Moodle repo I put it into
-<code>.openshift/action_hooks/pre_start_php-5.3</code>. For other apps you will
-have to use the appropriate cartridge name instead (i.e ruby-1.9 etc.).</p>
-
-<p>What this script does it runs an inline Ruby script that checks if a
-token file exists in your data dir and reads it. If not, it creates one
-and writes a random string into it.</p>
-
-<p>After that it writes the string to STDOUT when it is set to
-<code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app&#8217;s config files without manually entering a string yourself.</p>
-
-<p>If you need to migrate your app from somewhere else to Openshift you can
-still use this script and just set via SSH the string in <code>token</code>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -817,6 +823,10 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/">CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/">DD-WRT Router hinter Unitymedia-Kabelnetz</a>
       </li>
     
@@ -830,10 +840,6 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
     
       <li class="post">
         <a href="/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/01/moodle-datenbankmigration/">Moodle Datenbankmigration</a>
       </li>
     
   </ul>

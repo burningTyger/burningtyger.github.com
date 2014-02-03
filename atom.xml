@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2014-01-05T17:09:56+01:00</updated>
+  <updated>2014-02-03T21:04:10+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/"/>
+    <updated>2014-02-03T20:29:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi</id>
+    <content type="html"><![CDATA[<p>Der Ablauf ist im Prinzip der Selbe, wie schon im vorhergehenden Beitrag zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es nochmal auf und gebe gleich die notwendigen Quellen mit an.</p>
+
+<p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es kein Halten mehr, das musste schleunigst wieder runter – wackelige Scrolls zwischen den Home Screens waren und sind unerträglich für so ein hochwertiges Tablett. Und einen Vorteil konnten man bei dem Update nicht erkennen.</p>
+
+<p>CyanogenMod 11 hat natürlich einen Nachteil für das Note 8, der Stift funktioniert an einigen Stellen nicht wie unter der OEM Firmware, das ist klar. Aber, diese Einschränkungen waren in meinem Fall minimal und unmerklich. Lediglich das Eingabefeld für Handschrift ist nicht mehr da, das fand ich interessant, habe es aber ehrlich gesagt nie benutzt. Obwohl es eigentlich recht cool war. Texterkennung ziemlich perfekt. Aber wenn man es nicht braucht, sollte es kein Grund sein, nicht darauf zu verzichten. Ersatz für S Note gibt es mit Quill. Quill ist mindestens so gut wie S Note und kann sogar Vektorgrafik. Dementsprechend sind Exporte nach PDF wesentlich kleiner und qualitativ hochwertiger als unter S Note, das nur Grafiken einbindet.</p>
+
+<p>Aber nun zur Installation.</p>
+
+<p>Hier vorab die Quellen, die man sich anschauen sollte:
+Der Thread bei xda-developers: http://forum.xda-developers.com/showthread.php?t=2523706
+Die Seite der Nightlies: http://download.cyanogenmod.org/?device=n5100
+Changelog zu den Nightlies: http://www.cmxlog.com/11/n5110/
+Link zu Heimdall: http://glassechidna.com.au/heimdall/
+Link zu TKruzze, der die Gapps bereitstellt: http://www.androidfilehost.com/profile.php?uid=23134718111252952
+Link zu ClockworkMod Recovery 0.6.4.4: http://www.androidfilehost.com/?fid=23212708291675367</p>
+
+<p>Die oben angegebenen Links können natürlich in der Zwischenzeit aktualisiert worden sein!</p>
+
+<p>So, bevor es losgeht, eine letzte Warnung: Wenn etwas kaputt geht, es ist nicht meine Schuld. Sicher Deine Accounts, nach dem Flashen muss alles neu installiert werden. App-Daten bleiben auf der internen Karte gespeichert, aber nicht immer klappt die automatische Verbindung der Daten. Ebenso werden alle Kontodaten von z.B. Google gelöscht.</p>
+
+<p>Zum Flashen von CyanogenMod braucht man keine externe SD-Karte, man kann sie nutzen, ebenso kann man aber auch die interne SD-Karte nutzen. CyanogenMod 11 Nightly runterladen und z.B. im Download-Ordner ablegen. Ebenso das Gapps Paket. Hier kann man wählen zwischen den Paketen. das Kleinste reicht, den Rest der Apps kann man über den Play Store nachinstallieren.</p>
+
+<p>Dann Das Note 8 ausschalten.</p>
+
+<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden. Auf Linux war das nicht nötig.</p>
+
+<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte recovery-0.6.4.4.img vorhanden sein).</p>
+
+<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1 und Ubuntu 13.10):</p>
+
+<ul>
+<li>Verbindungskabel am Rechner anschließen, aber noch nicht ans Tablet</li>
+<li>Note 8 im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
+<li>Nach der Warnung über das USB-Kabel verbinden und Ton lauter drücken</li>
+<li>im Terminal <code>heimdall flash --RECOVERY recovery-0.6.4.4.img --no-reboot</code> eingeben</li>
+<li>Das Tablet startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
+<li>Das Tablet neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
+<li>Note 8 ist nun im Recovery-Modus und man kann CM-11 installieren</li>
+<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
+<li>data und cache wipe starten</li>
+<li>install zip from sdcard auswählen</li>
+<li>choose zip from sdcard, um die Firmware auszuwählen</li>
+<li>CM-11 wird installiert.</li>
+<li>Mit gapps das gleiche wiederholen</li>
+<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
+</ul>
+
+
+<p>Das wars. Es geht insgesamt recht schnell, das Laden der einzelnen Programme und Vorbereiten des Flashens dauert wesentlich länger.</p>
+
+<p>Viel Spass.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[DD-WRT Router hinter Unitymedia-Kabelnetz]]></title>
