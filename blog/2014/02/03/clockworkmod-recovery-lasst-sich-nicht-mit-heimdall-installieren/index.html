@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Moodle on Openshift one liner - Some thoughts</title>
+  <title>ClockworkMod Recovery lässt sich nicht mit Heimdall installieren - Some thoughts</title>
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git Disclaimer: You do need Ruby, the rhc gem and git &hellip;">
+  <meta name="description" content="Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/">
+  <link rel="canonical" href="http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Moodle on Openshift One Liner</h1>
+      <h1 class="entry-title">ClockworkMod Recovery Lässt Sich Nicht Mit Heimdall Installieren</h1>
     
     
       <p class="meta">
@@ -97,17 +97,27 @@
   
 
 
-<time datetime="2013-02-10T21:55:00+01:00" pubdate data-updated="true">Feb 10<span>th</span>, 2013</time>
+<time datetime="2014-02-03T21:06:00+01:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><pre><code>rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git
-</code></pre>
+<div class="entry-content"><p>Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM Logo drehte eine Endlosschleife und nichts war zu machen. Also nochmal über den Recovery Mode installieren, die Nightlies werden beim internen Update ja auf der SD-Karte abgelegt. Aber, das half auch nicht.</p>
 
-<p>Disclaimer: You do need Ruby, the rhc gem and git though :)</p>
+<p>Vielleicht ist ClockworkMod Recovery nicht aktuell genug? Also das auch gleich neu installieren, Heimdall ist schnell auf Linux installiert, CMR ist auch da, los gehts.</p>
+
+<p>Erster Fehler, auf das I9195 sollte man nie ein CMR für das N5110 installieren. Es endet damit, dass man nicht in den Recovery Mode kommt. Wenn man dann auch nicht das Telefon starten kann, ist es wertlos. Also nochmal Recovery einspielen, diesmal die richtige Version. Pustekuchen, geht nicht mehr. Der Download startet, Heimdall sagt 100%, bricht dann aber mit einem Timeout ab, weil das letzte Paket nicht antwortet.</p>
+
+<p>Jetzt geht gar nichts mehr. Prima. Alles ausprobiert, keine Informationen im Netz. Also gut, über VirtualBox Odin installieren, vielleicht hilft das. Aber da gibt es Schwierigkeiten mit USB.</p>
+
+<p>Also VirtualBox unter OSX anschmeißen, das geht auch mit USB. Nach einigem Ausprobieren, bin ich auf diese Seite gekommen, die beschreibt, wie man Odin unter OS X in VirtualBox und Windows XP zum Laufen bekommt. Tipp, USB2 aktivieren, das man über die Extension Packs nachinstallieren kann. Ebenso die Samsung Treiber installieren, Kies ging irgendwie nicht.
+Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda Forum</a></p>
+
+<p>Über diesen Umweg war es dann schließlich doch möglich das richtige ClockworkMod Recovery zu installieren und anschließend ein funktionierendes Nightly zu flashen.</p>
+
+<p>Man lernt nie aus.</p>
 </div>
 
 
@@ -130,12 +140,12 @@
   
 
 
-<time datetime="2013-02-10T21:55:00+01:00" pubdate data-updated="true">Feb 10<span>th</span>, 2013</time>
+<time datetime="2014-02-03T21:06:00+01:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/moodle/'>moodle</a>, <a class='category' href='/blog/categories/openshift/'>openshift</a>
+    <a class='category' href='/blog/categories/clockworkmod-/'>clockworkmod,</a>, <a class='category' href='/blog/categories/heimdall-/'>heimdall,</a>, <a class='category' href='/blog/categories/recovery/'>recovery</a>, <a class='category' href='/blog/categories/samsung-/'>samsung,</a>
   
 </span>
 
@@ -144,7 +154,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/" data-via="" data-counturl="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/" data-via="" data-counturl="http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/" >Tweet</a>
   
   
   
@@ -153,10 +163,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/02/01/moodle-auf-openshift-betreiben/" title="Previous Post: Moodle auf Openshift betreiben">&laquo; Moodle auf Openshift betreiben</a>
+        <a class="basic-alignment left" href="/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/" title="Previous Post: CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)">&laquo; CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/30/moodles-cron-jobs-beschleunigen/" title="Next Post: Moodles cron jobs beschleunigen">Moodles cron jobs beschleunigen &raquo;</a>
       
     </p>
   </footer>

@@ -9,9 +9,10 @@
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Openshift makes extensive use of env
-vars that can be used by your apps. This is really useful for creating
-generic repositories like Quickstarts. &hellip;">
+  <meta name="description" content="Using a git submodule in one
+of your Openshift apps can be quite useful. I
+created a Moodle Quickstart and needed to embed
+Moodle inside my Openshift &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +81,120 @@ generic repositories like Quickstarts. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/16/custom-config-files-in-openshift-submodules/">Custom Config Files in Openshift Submodules</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-16T20:08:00+01:00" pubdate data-updated="true">Jan 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a> in one
+of your <a href="https://openshift.redhat.com">Openshift</a> apps can be quite useful. I
+created a <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> and needed to embed
+<a href="http://moodle.org">Moodle</a> inside my Openshift repo. There are many ways of
+doing so but most are a pain to maintain if you need frequent updates to keep
+up with security issues.</p>
+
+<p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
+overwriting with archives etc. use a submodule instead. I&#8217;ll post an example
+with Moodle here, the same can be said about most other apps. Assuming you set
+up a new app through the web interface:</p>
+
+<pre><code> rhc app git-clone moodle 
+ # clone the app locally cd moodle 
+ git rm -rf php git
+ ci -m 'remove php dir for submodule' 
+ # clean your repo git submodule add
+ git://git.moodle.org/moodle.git php 
+ # make php your submodule dir 
+ cd php git
+ checkout 10ad21dc9a50c4720bf69fa0224eeb28a892e997 
+ # check out a certain commit inside your submodule 
+ cd .. 
+ git add -u 
+ git ci -am 'add moodle submodule and set to 2.3.3' 
+ # go back to your repo root and commit the submodule to it
+</code></pre>
+
+<p>Now you can push your app to Openshift and you can easily update your app by
+updating the submodule to a newer commit.</p>
+
+<p>There is one caveat though: you cannot add your own files to the submodule
+without having a remote repository where you can store your changes and make
+them available to others (in this case Openshift because it will need the
+commit with your chages accessible). As you see the submodule is alien to the
+parent repository. Everything the parent knows about the submodule is inside
+the <code>.gitmodules</code> file. It keeps track of the submodule and its attributes:</p>
+
+<pre><code>[submodule "php"] 
+path = php 
+url = git://git.moodle.org/moodle.git
+</code></pre>
+
+<p>If you also check out the github page you will notice that the submodule repo
+is set to a certain commit:</p>
+
+<p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
+
+<p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
+is empty. That&#8217;s because there is nothing. All it does is refer to that moodle
+repo commit. You can trigger the clone of that repo but there&#8217;s no need to.
+Openshift can do that for you once you push it there.</p>
+
+<p>You get the idea. You don&#8217;t have control over that submodule. Take it or leave
+it. So unless you want to fork moodle with your own changes to the repo and
+pull in changes to that fork you cannot make changes to it.</p>
+
+<p>That&#8217;s where we are. However, there is a simple workaround for this on
+Openshift that is really slick and easy to set up. You can use one of the
+<code>action_hooks</code> that come with each app and that reside in the
+<code>.openshift/action_hooks</code> dir in the root of your repo.</p>
+
+<p>In the case of Moodle I needed to place my <code>config.php</code> in the <code>php</code> dir where
+Moodle expects all the database settings and other stuff to properly run.</p>
+
+<p>Since I already used <code>.openshift/action_hooks/pre_start_php-5.3</code> to set the
+OPENSHIFT_SECURE_TOKEN (which I described
+<a href="http://burningtyger.github.com/blog/2013/01/06/hassle-free-secure-tokens-%0Aon-openshift/">here</a>) I just added a line which copies the <code>config.php</code> from
+<code>config/config.php</code> to <code>php/config.php</code>. That means I added a dir with a file
+in it to the <a href="https://github.com/burningTyger/openshift_moodle/tree/master/config">parent directory</a>
+and copied it upon deployment to the submodule folder:</p>
+
+<pre><code>cp ~/app-root/repo/config/config.php ~/app-root/repo/php/
+</code></pre>
+
+<p>Since the <code>action_hook</code> are called within every deployment there is no need to
+manually move files or change the submodule via SSH. The config file can be
+added to the Openshift repository and tracked there. A very clean solution if
+you ask me.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -247,6 +362,10 @@ in your site settings.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/">ClockworkMod Recovery lässt sich nicht mit Heimdall installieren</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/">CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)</a>
       </li>
     
@@ -260,10 +379,6 @@ in your site settings.</p>
     
       <li class="post">
         <a href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/">How to fix a corrupt Mac OS X hard drive (catolog)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195</a>
       </li>
     
   </ul>
