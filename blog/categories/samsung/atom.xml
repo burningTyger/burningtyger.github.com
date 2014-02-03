@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tablet, | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/tablet-/atom.xml" rel="self"/>
+  <title><![CDATA[Category: samsung | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/samsung/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-03T21:15:50+01:00</updated>
+  <updated>2014-02-03T21:17:35+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ClockworkMod Recovery lässt sich nicht mit Heimdall installieren]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/"/>
+    <updated>2014-02-03T21:06:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren</id>
+    <content type="html"><![CDATA[<p>Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM Logo drehte eine Endlosschleife und nichts war zu machen. Also nochmal über den Recovery Mode installieren, die Nightlies werden beim internen Update ja auf der SD-Karte abgelegt. Aber, das half auch nicht.</p>
+
+<p>Vielleicht ist ClockworkMod Recovery nicht aktuell genug? Also das auch gleich neu installieren, Heimdall ist schnell auf Linux installiert, CMR ist auch da, los gehts.</p>
+
+<p>Erster Fehler, auf das I9195 sollte man nie ein CMR für das N5110 installieren. Es endet damit, dass man nicht in den Recovery Mode kommt. Wenn man dann auch nicht das Telefon starten kann, ist es wertlos. Also nochmal Recovery einspielen, diesmal die richtige Version. Pustekuchen, geht nicht mehr. Der Download startet, Heimdall sagt 100%, bricht dann aber mit einem Timeout ab, weil das letzte Paket nicht antwortet.</p>
+
+<p>Jetzt geht gar nichts mehr. Prima. Alles ausprobiert, keine Informationen im Netz. Also gut, über VirtualBox Odin installieren, vielleicht hilft das. Aber da gibt es Schwierigkeiten mit USB.</p>
+
+<p>Also VirtualBox unter OSX anschmeißen, das geht auch mit USB. Nach einigem Ausprobieren, bin ich auf diese Seite gekommen, die beschreibt, wie man Odin unter OS X in VirtualBox und Windows XP zum Laufen bekommt. Tipp, USB2 aktivieren, das man über die Extension Packs nachinstallieren kann. Ebenso die Samsung Treiber installieren, Kies ging irgendwie nicht.
+Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda Forum</a></p>
+
+<p>Über diesen Umweg war es dann schließlich doch möglich das richtige ClockworkMod Recovery zu installieren und anschließend ein funktionierendes Nightly zu flashen.</p>
+
+<p>Man lernt nie aus.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)]]></title>
