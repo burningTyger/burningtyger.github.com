@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nightlies | Some thoughts]]></title>
+  <link href="http://burningTyger.github.com/blog/categories/nightlies/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.com/"/>
+  <updated>2014-02-06T11:42:08+01:00</updated>
+  <id>http://burningTyger.github.com/</id>
+  <author>
+    <name><![CDATA[burningTyger]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CyanogenMod 11 nightlies ok again]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again/"/>
+    <updated>2014-02-06T11:39:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again</id>
+    <content type="html"><![CDATA[<p>After some broken nightlies for many supported devices CyanogenMod 11 nightlies
+are ok again. I have a build from 5/2/14 running on both devices, I9195 and N5110.</p>
+
+<p>Launcher 3 has been dropped in favor of Trebuchet 1 which seems a bit unfinished in
+its settings but works well otherwise.</p>
+]]></content>
+  </entry>
+  
+</feed>

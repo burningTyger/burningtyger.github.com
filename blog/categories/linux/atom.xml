@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Some thoughts]]></title>
   <link href="http://burningTyger.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-03T21:17:35+01:00</updated>
+  <updated>2014-02-06T11:42:08+01:00</updated>
   <id>http://burningTyger.github.com/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu and the MacBook Pro 3.1]]></title>
+    <link href="http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/"/>
+    <updated>2014-02-06T11:29:00+01:00</updated>
+    <id>http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
+    <content type="html"><![CDATA[<p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
+because it breathes fresh air into an "older" Mac but also because it runs a lot
+smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
+
+<p>I know, the machine is not quite state of the art but if Apple decides to let users
+install 10.9 on their machines they should at least make sure it's a smooth experience.</p>
+
+<p>But it's not. I have 4GB of memory in my MBP and it's still slow and sluggish at
+best. Not very nice. And looking at the specs the MBP is not bad.</p>
+
+<p>Anyway, putting Ubuntu on it was ok but here and there there are some issues that
+need some tinkering. One of them was the graphics card. It works but there are always
+error messages in Gnome after startup. I tried the Nouveau driver but it didn't
+really work. Issues here and there. So I tried the Nvidia driver which worked better
+but still produced the error messages. I think it was the 319 driver.</p>
+
+<p>Yesterday after looking into that again I tried the newer updated 319 driver and
+voila, no more error messages.</p>
+
+<p>So if you come here looking for the MacBook Pro late 2007 3.1 model with a G84M
+video card, also known as Nvidia GeForce 8600M GT do not look further but use the
+NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It's proprietary
+but that's the price for a working video card.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to fix a corrupt Mac OS X hard drive (catolog)]]></title>

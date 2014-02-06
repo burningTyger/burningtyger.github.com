@@ -9,7 +9,8 @@
   <meta name="author" content="burningTyger">
 
   
-  <meta name="description" content="Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM &hellip;">
+  <meta name="description" content="After some broken nightlies for many supported devices CyanogenMod 11 nightlies
+are ok again. I have a build from 5/2/14 running on both devices, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +79,104 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again/">CyanogenMod 11 Nightlies Ok Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-06T11:39:00+01:00" pubdate data-updated="true">Feb 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After some broken nightlies for many supported devices CyanogenMod 11 nightlies
+are ok again. I have a build from 5/2/14 running on both devices, I9195 and N5110.</p>
+
+<p>Launcher 3 has been dropped in favor of Trebuchet 1 which seems a bit unfinished in
+its settings but works well otherwise.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/">Ubuntu and the MacBook Pro 3.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-06T11:29:00+01:00" pubdate data-updated="true">Feb 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
+because it breathes fresh air into an &#8220;older&#8221; Mac but also because it runs a lot
+smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
+
+<p>I know, the machine is not quite state of the art but if Apple decides to let users
+install 10.9 on their machines they should at least make sure it&#8217;s a smooth experience.</p>
+
+<p>But it&#8217;s not. I have 4GB of memory in my MBP and it&#8217;s still slow and sluggish at
+best. Not very nice. And looking at the specs the MBP is not bad.</p>
+
+<p>Anyway, putting Ubuntu on it was ok but here and there there are some issues that
+need some tinkering. One of them was the graphics card. It works but there are always
+error messages in Gnome after startup. I tried the Nouveau driver but it didn&#8217;t
+really work. Issues here and there. So I tried the Nvidia driver which worked better
+but still produced the error messages. I think it was the 319 driver.</p>
+
+<p>Yesterday after looking into that again I tried the newer updated 319 driver and
+voila, no more error messages.</p>
+
+<p>So if you come here looking for the MacBook Pro late 2007 3.1 model with a G84M
+video card, also known as Nvidia GeForce 8600M GT do not look further but use the
+NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&#8217;s proprietary
+but that&#8217;s the price for a working video card.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -577,172 +676,6 @@ wie folgt aus:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/10/moodle-on-openshift-one-liner/">Moodle on Openshift One Liner</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-10T21:55:00+01:00" pubdate data-updated="true">Feb 10<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><pre><code>rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git
-</code></pre>
-
-<p>Disclaimer: You do need Ruby, the rhc gem and git though :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/01/moodle-auf-openshift-betreiben/">Moodle Auf Openshift Betreiben</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-01T20:35:00+01:00" pubdate data-updated="true">Feb 1<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Moodle?</h3>
-
-<p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
-vielen Schulen und Universitäten eingesetzt. Neben unzähligen
-Einstellungsmöglichkeiten und Plugins hat es mittlerweile einen Status
-erreicht, der es möglich macht, Moodle für nahezu jeden
-Anwendungsbereich einzurichten. Dabei spielt es dann keine Rolle, ob 12 Nutzer bedient
-werden oder 12 Millionen. Moodle ist für so ziemlich alles gewappnet und
-eine aktive Entwicklergemeinde sorgt für einen ständigen Fluss an
-Verbesserungen und Erweiterungen.</p>
-
-<p>Das klingt erstmal gut, aber wer Moodle ernsthaft einsetzen möchte,
-braucht eine Menge Zeit, einige Ressourcen und Durchhaltevermögen.
-Moodle kann ein richtiges Monster sein. Die Basisinstallation ist recht
-umfangreich und man braucht einiges an Ressourcen, um Moodle
-einigermaßen zum Laufen zu bekommen. Der Speicherplatz, den man vom
-Provider nebenan zur Verfügung gestellt bekommt, reicht meistens nicht
-aus, um eine sinnvolle Installation einzurichten. Moodle ist durch seine
-schiere Größe speicherhungrig und verlangt nach mehr. Darüber hinaus
-muss der Server PHP 5.3 mit einigen Erweiterungen und MySQL bereitstellen. Da
-die meisten Provider keine genauen Angaben über Speicherkapazität machen
-und teilweise auch nicht verraten, welche Erweiterungen installiert
-sind, möchte man ungern Verträge eingehen.</p>
-
-<h3>Openshift</h3>
-
-<p>An dieser Stelle kommt <a href="https://openshift.com">Openshift</a> von Red Hat
-ins Spiel. Openshift ist ein relativ neuer Anbieter einer <i>Platform as a
-Service</i>, zu neudeutsch <i>Cloud</i>. Man installiert eine sogenannte
-Applikation, in unserem Fall Moodle, bei Openshift und dort kümmert man
-sich um die notwendigen Ressourcen. D.h. braucht man viel Ressourcen,
-weil viele Nutzer auf den Dienst zugreifen, dann wird die Anwendung
-skaliert, bekommt also mehr Ressourcen zugeteilt. Bei geringerem Bedarf
-wird wieder runtergeschraubt. Das kostet natürlich Geld. Je nach
-Verbrauch. Dafür muss man sich um nichts kümmern, es läuft einfach.</p>
-
-<p>Als einfacher Nutzer oder als Organisation mit weniger hohen Ansprüchen
-lässt sich Openshift aber auch schon verwenden. Man bekommt als
-kostenlosen Einstieg in den PaaS drei Instanzen zu jeweils 500MB
-zugeteilt, die man auch verbinden kann. D.h. es stehen einem kostenlos
-bis zu 1.5GB an Speicher zur Verfügung. Das lasse man sich jetzt mal auf
-der Zunge zergehen. Das bietet kein Provider um die Ecke und auch nicht
-für umsonst.</p>
-
-<p>500MB sind eine gute Größe für eine einfache Moodle Installation. Es
-reicht um etwa 5–10 Personen gleichzeitig zu versorgen. 5-10 Personen,
-die gleichzeitig versuchen eine Seite zu laden. Mit anderen Worten, wenn
-eine ganze Klasse von 30 Schülern an 30 PCs sitzt und gleichzeitig
-versucht sich einzuloggen. Der eine braucht etwas länger, der andere ist
-etwas schneller. Im schlimmsten Fall muss der 11. etwas länger auf die
-Seite warten, wird aber dann auch bedient und kann sich einloggen. Wie
-viele Klassen arbeiten gleichzeitig an Moodle? In seltenen Fällen mehr
-als eine und wenn, dann staut es sich höchstens beim Login.</p>
-
-<h3>Git</h3>
-
-<p>Openshift ist kein klassischer Anbieter von Speicherplatz im Internet.
-Es ist ausgelegt für moderne Webanwendungen, die mit der
-Versionsverwaltung <a href="http://git-scm.com">Git</a> entwickelt wurden. Git ist keine
-Programmiersprache sondern ein Weg, unterschiedliche Versionen einer
-Software zu verwalten. Eine Art Buchhaltung für Software. Jeder Zustand
-wird festgehalten und kann rückgängig gemacht werden. Man kann
-Änderungen in sogenannte Branches verlagern und später mit einbinden. Es
-macht die Entwicklung von modernen Anwendungen erheblich einfacher und
-fördert die Zusammenarbeit mit anderen Entwicklern.</p>
-
-<p>Openshift macht sich die unterschiedlichen Fähigkeiten von Git zu eigen
-und ermöglicht den Abgleich von Daten nur darüber. Kein FTP, keine
-umständlichen Überschreibeaktionen, um alte Daten mit neuen
-auszutauschen und der bangen Hoffnung, dass man nicht doch das falsche
-gelöscht hat. Git überträgt lediglich die Änderungen und startet den
-Server auf Openshift neu. Damit werden alle Aktualisierungen aktiv und
-die Anwendung ist auf dem neusten Stand.</p>
-
-<p>Moodle verwendet zur Entwicklung bereits Git und betreibt ein sog.
-öffentliches Repository auf <a href="https://github.com">GitHub</a> unter der
-Adresse
-<a href="https://github.com/moodle/moodle">https://github.com/moodle/moodle</a>.
-Dort kann man alle Änderungen, sogenannte Commits nachvollziehen und
-beobachten. Leider kann man dieses Repository nicht direkt bei Openshift
-verwenden, dafür ist Moodle dann wieder etwas anspruchsvoll. Man muss
-Moodle vorerst in ein anderes Repository einbinden, damit es die
-richtigen Einstellungen für die Datenbank etc. findet und verwenden
-kann. Damit nicht jeder von vorne anfangen muss und das Rad mehrmals
-erfunden wird, habe ich unter
-<a href="https://github.com/burningTyger/openshift_moodle">openshift_moodle</a> ein
-Repository eingerichtet, das sich direkt für Openshift verwenden lässt.
-Dort gibt es auch eine Anleitung auf Englisch, die bei der Einrichtung
-hilft. Sollte es Schwierigkeiten mit der englischen Anleitung geben,
-stehe ich für Fragen gerne zur Verfügung. Entweder per Twitter
-<a href="https://twitter.com/btyga">@btyga</a>
-oder per eMail über b6tyger bei gmail.com.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -758,6 +691,14 @@ oder per eMail über b6tyger bei gmail.com.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again/">CyanogenMod 11 nightlies ok again</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/">Ubuntu and the MacBook Pro 3.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/">ClockworkMod Recovery lässt sich nicht mit Heimdall installieren</a>
       </li>
     
@@ -767,14 +708,6 @@ oder per eMail über b6tyger bei gmail.com.</p>
     
       <li class="post">
         <a href="/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/">DD-WRT Router hinter Unitymedia-Kabelnetz</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/">DD-WRT auf einem TP-Link WDR4900 V1 Router installieren</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/">How to fix a corrupt Mac OS X hard drive (catolog)</a>
       </li>
     
   </ul>
