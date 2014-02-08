@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.io/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:33:38+01:00</updated>
+  <updated>2014-02-08T15:42:43+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CyanogenMod Nightlies kennenlernen]]></title>
+    <link href="http://burningTyger.github.io/blog/2014/02/08/cyanogenmod-nightlies-kennenlernen/"/>
+    <updated>2014-02-08T15:35:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2014/02/08/cyanogenmod-nightlies-kennenlernen</id>
+    <content type="html"><![CDATA[<p>Cyanogenmod 11 ist schon recht weit in der Entwicklung, das meiste funktioniert wie erwartet und die Nightles sind relativ zuverlässig.</p>
+
+<p>Wer etwas über die aktuellen Nightlies erfahren will, kann folgendes tun:</p>
+
+<ul>
+<li>Die aktuellen Veränderungen in die Changelogs verfolgen, z.B. für das Samsung S4 mini (GT-I9195) aka serranoltexx: <a href="cmxlog.com/11/serranoltexx/">cmxlog.com/11/serranoltexx/</a></li>
+<li>Schauen, wie weit der Build-Vorgang der aktuellen Nightlies ist und ob es vielleicht Probleme gibt: <a href="jenkins.cyanogenmod.com/job/android/">jenkins.cyanogenmod.com/job/android/</a></li>
+<li>Den jeweiligen xda-developers Thread beobachten, hier ebenfalls für das i9195: <a href="http://forum.xda-developers.com/showthread.php?t=2558685">http://forum.xda-developers.com/showthread.php?t=2558685</a></li>
+</ul>
+
+
+<p>Es gibt meistens auch noch weitere Foren Threads, die sich mit Bugs etc. auseinandersetzen.</p>
+
+<p>Für Fragen, meist auch zu aktuellen Nightlies, bietet sich ebenfalls der <code>#cyanogenmod</code> Channel auf Freenode an. Wie überall ist es praktisch, wenn man in der Schule im Englischunterricht aufgepasst hat.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CyanogenMod 11 nightlies ok again]]></title>
