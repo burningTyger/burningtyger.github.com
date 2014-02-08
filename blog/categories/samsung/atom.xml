@@ -4,7 +4,7 @@
   <title><![CDATA[Category: samsung | Some thoughts]]></title>
   <link href="http://burningTyger.github.io/blog/categories/samsung/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:42:43+01:00</updated>
+  <updated>2014-02-08T15:49:08+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -40,9 +40,9 @@ Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda For
     <link href="http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/"/>
     <updated>2014-02-03T20:29:00+01:00</updated>
     <id>http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi</id>
-    <content type="html"><![CDATA[<p>Der Ablauf ist im Prinzip der Selbe, wie schon im <a href="http://burningtyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">vorhergehenden Beitrag</a> zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es nochmal auf und gebe gleich die notwendigen Quellen mit an.</p>
+    <content type="html"><![CDATA[<p>Der Ablauf ist im Prinzip derselbe wie schon im <a href="http://burningtyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">vorhergehenden Beitrag</a> zum Samsung Galaxy S4 Mini.</p>
 
-<p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es kein Halten mehr, das musste schleunigst wieder runter – wackelige Scrolls zwischen den Home Screens waren und sind unerträglich für so ein hochwertiges Tablett. Und einen Vorteil konnten man bei dem Update nicht erkennen.</p>
+<p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es keinen Grund zum weiteren Abwarten.</p>
 
 <p>CyanogenMod 11 hat natürlich einen Nachteil für das Note 8, der Stift funktioniert an einigen Stellen nicht wie unter der OEM Firmware, das ist klar. Aber, diese Einschränkungen waren in meinem Fall minimal und unmerklich. Lediglich das Eingabefeld für Handschrift ist nicht mehr da, das fand ich interessant, habe es aber ehrlich gesagt nie benutzt. Obwohl es eigentlich recht cool war. Texterkennung ziemlich perfekt. Aber wenn man es nicht braucht, sollte es kein Grund sein, nicht darauf zu verzichten. Ersatz für S Note gibt es mit <a href="https://code.google.com/p/android-quill/">Quill</a>. Quill ist mindestens so gut wie S Note und kann sogar Vektorgrafik. Dementsprechend sind Exporte nach PDF wesentlich kleiner und qualitativ hochwertiger als unter S Note, das nur Grafiken einbindet.</p>
 
@@ -64,7 +64,7 @@ Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda For
 
 <p>So, bevor es losgeht, eine letzte Warnung: Wenn etwas kaputt geht, es ist nicht meine Schuld. Sicher Deine Accounts, nach dem Flashen muss alles neu installiert werden. App-Daten bleiben auf der internen Karte gespeichert, aber nicht immer klappt die automatische Verbindung der Daten. Ebenso werden alle Kontodaten von z.B. Google gelöscht.</p>
 
-<p>Zum Flashen von CyanogenMod braucht man keine externe SD-Karte, man kann sie nutzen, ebenso kann man aber auch die interne SD-Karte nutzen. CyanogenMod 11 Nightly runterladen und z.B. im Download-Ordner ablegen. Ebenso das Gapps Paket. Hier kann man wählen zwischen den Paketen. das Kleinste reicht, den Rest der Apps kann man über den Play Store nachinstallieren.</p>
+<p>Zum Flashen von CyanogenMod braucht man keine externe SD-Karte, man kann sie nutzen, ebenso kann man aber auch die interne SD-Karte nutzen. CyanogenMod 11 Nightly runterladen und z.B. im Download-Ordner ablegen. Ebenso das Gapps Paket.</p>
 
 <p>Dann das Note 8 ausschalten.</p>
 
