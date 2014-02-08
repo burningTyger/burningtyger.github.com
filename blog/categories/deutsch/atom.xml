@@ -4,7 +4,7 @@
   <title><![CDATA[Category: deutsch | Some thoughts]]></title>
   <link href="http://burningTyger.github.io/blog/categories/deutsch/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:23:24+01:00</updated>
+  <updated>2014-02-08T15:33:38+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -14,102 +14,208 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Moodle auf Openshift betreiben]]></title>
-    <link href="http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben/"/>
-    <updated>2013-02-01T20:35:00+01:00</updated>
-    <id>http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben</id>
-    <content type="html"><![CDATA[<h3>Moodle?</h3>
+    <title type="html"><![CDATA[ClockworkMod Recovery lässt sich nicht mit Heimdall installieren]]></title>
+    <link href="http://burningTyger.github.io/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/"/>
+    <updated>2014-02-03T21:06:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren</id>
+    <content type="html"><![CDATA[<p>Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM Logo drehte eine Endlosschleife und nichts war zu machen. Also nochmal über den Recovery Mode installieren, die Nightlies werden beim internen Update ja auf der SD-Karte abgelegt. Aber, das half auch nicht.</p>
 
-<p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
-vielen Schulen und Universitäten eingesetzt. Neben unzähligen
-Einstellungsmöglichkeiten und Plugins hat es mittlerweile einen Status
-erreicht, der es möglich macht, Moodle für nahezu jeden
-Anwendungsbereich einzurichten. Dabei spielt es dann keine Rolle, ob 12 Nutzer bedient
-werden oder 12 Millionen. Moodle ist für so ziemlich alles gewappnet und
-eine aktive Entwicklergemeinde sorgt für einen ständigen Fluss an
-Verbesserungen und Erweiterungen.</p>
+<p>Vielleicht ist ClockworkMod Recovery nicht aktuell genug? Also das auch gleich neu installieren, Heimdall ist schnell auf Linux installiert, CMR ist auch da, los gehts.</p>
 
-<p>Das klingt erstmal gut, aber wer Moodle ernsthaft einsetzen möchte,
-braucht eine Menge Zeit, einige Ressourcen und Durchhaltevermögen.
-Moodle kann ein richtiges Monster sein. Die Basisinstallation ist recht
-umfangreich und man braucht einiges an Ressourcen, um Moodle
-einigermaßen zum Laufen zu bekommen. Der Speicherplatz, den man vom
-Provider nebenan zur Verfügung gestellt bekommt, reicht meistens nicht
-aus, um eine sinnvolle Installation einzurichten. Moodle ist durch seine
-schiere Größe speicherhungrig und verlangt nach mehr. Darüber hinaus
-muss der Server PHP 5.3 mit einigen Erweiterungen und MySQL bereitstellen. Da
-die meisten Provider keine genauen Angaben über Speicherkapazität machen
-und teilweise auch nicht verraten, welche Erweiterungen installiert
-sind, möchte man ungern Verträge eingehen.</p>
+<p>Erster Fehler, auf das I9195 sollte man nie ein CMR für das N5110 installieren. Es endet damit, dass man nicht in den Recovery Mode kommt. Wenn man dann auch nicht das Telefon starten kann, ist es wertlos. Also nochmal Recovery einspielen, diesmal die richtige Version. Pustekuchen, geht nicht mehr. Der Download startet, Heimdall sagt 100%, bricht dann aber mit einem Timeout ab, weil das letzte Paket nicht antwortet.</p>
 
-<h3>Openshift</h3>
+<p>Jetzt geht gar nichts mehr. Prima. Alles ausprobiert, keine Informationen im Netz. Also gut, über VirtualBox Odin installieren, vielleicht hilft das. Aber da gibt es Schwierigkeiten mit USB.</p>
 
-<p>An dieser Stelle kommt <a href="https://openshift.com">Openshift</a> von Red Hat
-ins Spiel. Openshift ist ein relativ neuer Anbieter einer <i>Platform as a
-Service</i>, zu neudeutsch <i>Cloud</i>. Man installiert eine sogenannte
-Applikation, in unserem Fall Moodle, bei Openshift und dort kümmert man
-sich um die notwendigen Ressourcen. D.h. braucht man viel Ressourcen,
-weil viele Nutzer auf den Dienst zugreifen, dann wird die Anwendung
-skaliert, bekommt also mehr Ressourcen zugeteilt. Bei geringerem Bedarf
-wird wieder runtergeschraubt. Das kostet natürlich Geld. Je nach
-Verbrauch. Dafür muss man sich um nichts kümmern, es läuft einfach.</p>
+<p>Also VirtualBox unter OSX anschmeißen, das geht auch mit USB. Nach einigem Ausprobieren, bin ich auf diese Seite gekommen, die beschreibt, wie man Odin unter OS X in VirtualBox und Windows XP zum Laufen bekommt. Tipp, USB2 aktivieren, das man über die Extension Packs nachinstallieren kann. Ebenso die Samsung Treiber installieren, Kies ging irgendwie nicht.
+Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda Forum</a></p>
 
-<p>Als einfacher Nutzer oder als Organisation mit weniger hohen Ansprüchen
-lässt sich Openshift aber auch schon verwenden. Man bekommt als
-kostenlosen Einstieg in den PaaS drei Instanzen zu jeweils 500MB
-zugeteilt, die man auch verbinden kann. D.h. es stehen einem kostenlos
-bis zu 1.5GB an Speicher zur Verfügung. Das lasse man sich jetzt mal auf
-der Zunge zergehen. Das bietet kein Provider um die Ecke und auch nicht
-für umsonst.</p>
+<p>Über diesen Umweg war es dann schließlich doch möglich das richtige ClockworkMod Recovery zu installieren und anschließend ein funktionierendes Nightly zu flashen.</p>
 
-<p>500MB sind eine gute Größe für eine einfache Moodle Installation. Es
-reicht um etwa 5–10 Personen gleichzeitig zu versorgen. 5-10 Personen,
-die gleichzeitig versuchen eine Seite zu laden. Mit anderen Worten, wenn
-eine ganze Klasse von 30 Schülern an 30 PCs sitzt und gleichzeitig
-versucht sich einzuloggen. Der eine braucht etwas länger, der andere ist
-etwas schneller. Im schlimmsten Fall muss der 11. etwas länger auf die
-Seite warten, wird aber dann auch bedient und kann sich einloggen. Wie
-viele Klassen arbeiten gleichzeitig an Moodle? In seltenen Fällen mehr
-als eine und wenn, dann staut es sich höchstens beim Login.</p>
+<p>Man lernt nie aus.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)]]></title>
+    <link href="http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/"/>
+    <updated>2014-02-03T20:29:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi</id>
+    <content type="html"><![CDATA[<p>Der Ablauf ist im Prinzip der Selbe, wie schon im <a href="http://burningtyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">vorhergehenden Beitrag</a> zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es nochmal auf und gebe gleich die notwendigen Quellen mit an.</p>
 
-<h3>Git</h3>
+<p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es kein Halten mehr, das musste schleunigst wieder runter – wackelige Scrolls zwischen den Home Screens waren und sind unerträglich für so ein hochwertiges Tablett. Und einen Vorteil konnten man bei dem Update nicht erkennen.</p>
 
-<p>Openshift ist kein klassischer Anbieter von Speicherplatz im Internet.
-Es ist ausgelegt für moderne Webanwendungen, die mit der
-Versionsverwaltung <a href="http://git-scm.com">Git</a> entwickelt wurden. Git ist keine
-Programmiersprache sondern ein Weg, unterschiedliche Versionen einer
-Software zu verwalten. Eine Art Buchhaltung für Software. Jeder Zustand
-wird festgehalten und kann rückgängig gemacht werden. Man kann
-Änderungen in sogenannte Branches verlagern und später mit einbinden. Es
-macht die Entwicklung von modernen Anwendungen erheblich einfacher und
-fördert die Zusammenarbeit mit anderen Entwicklern.</p>
+<p>CyanogenMod 11 hat natürlich einen Nachteil für das Note 8, der Stift funktioniert an einigen Stellen nicht wie unter der OEM Firmware, das ist klar. Aber, diese Einschränkungen waren in meinem Fall minimal und unmerklich. Lediglich das Eingabefeld für Handschrift ist nicht mehr da, das fand ich interessant, habe es aber ehrlich gesagt nie benutzt. Obwohl es eigentlich recht cool war. Texterkennung ziemlich perfekt. Aber wenn man es nicht braucht, sollte es kein Grund sein, nicht darauf zu verzichten. Ersatz für S Note gibt es mit <a href="https://code.google.com/p/android-quill/">Quill</a>. Quill ist mindestens so gut wie S Note und kann sogar Vektorgrafik. Dementsprechend sind Exporte nach PDF wesentlich kleiner und qualitativ hochwertiger als unter S Note, das nur Grafiken einbindet.</p>
 
-<p>Openshift macht sich die unterschiedlichen Fähigkeiten von Git zu eigen
-und ermöglicht den Abgleich von Daten nur darüber. Kein FTP, keine
-umständlichen Überschreibeaktionen, um alte Daten mit neuen
-auszutauschen und der bangen Hoffnung, dass man nicht doch das falsche
-gelöscht hat. Git überträgt lediglich die Änderungen und startet den
-Server auf Openshift neu. Damit werden alle Aktualisierungen aktiv und
-die Anwendung ist auf dem neusten Stand.</p>
+<p>Aber nun zur Installation.</p>
 
-<p>Moodle verwendet zur Entwicklung bereits Git und betreibt ein sog.
-öffentliches Repository auf <a href="https://github.com">GitHub</a> unter der
-Adresse
-<a href="https://github.com/moodle/moodle">https://github.com/moodle/moodle</a>.
-Dort kann man alle Änderungen, sogenannte Commits nachvollziehen und
-beobachten. Leider kann man dieses Repository nicht direkt bei Openshift
-verwenden, dafür ist Moodle dann wieder etwas anspruchsvoll. Man muss
-Moodle vorerst in ein anderes Repository einbinden, damit es die
-richtigen Einstellungen für die Datenbank etc. findet und verwenden
-kann. Damit nicht jeder von vorne anfangen muss und das Rad mehrmals
-erfunden wird, habe ich unter
-<a href="https://github.com/burningTyger/openshift_moodle">openshift_moodle</a> ein
-Repository eingerichtet, das sich direkt für Openshift verwenden lässt.
-Dort gibt es auch eine Anleitung auf Englisch, die bei der Einrichtung
-hilft. Sollte es Schwierigkeiten mit der englischen Anleitung geben,
-stehe ich für Fragen gerne zur Verfügung. Entweder per Twitter
-<a href="https://twitter.com/btyga">@btyga</a>
-oder per eMail über b6tyger bei gmail.com.</p>
+<p>Hier vorab die Quellen, die man sich anschauen sollte:</p>
+
+<ul>
+<li><a href="http://forum.xda-developers.com/showthread.php?t=2523706">Der Thread bei xda-developers</a></li>
+<li><a href="http://download.cyanogenmod.org/?device=n5100">Die Seite der Nightlies</a></li>
+<li><a href="http://www.cmxlog.com/11/n5110/">Changelog zu den Nightlies</a></li>
+<li><a href="http://glassechidna.com.au/heimdall/">Link zu Heimdall</a></li>
+<li><a href="http://wiki.cyanogenmod.org/w/Gapps">Link zu Gapps</a></li>
+<li><a href="http://www.androidfilehost.com/?fid=23212708291675367">Link zu ClockworkMod Recovery 0.6.4.4</a></li>
+</ul>
+
+
+<p>Die oben angegebenen Links können natürlich in der Zwischenzeit aktualisiert worden sein!</p>
+
+<p>So, bevor es losgeht, eine letzte Warnung: Wenn etwas kaputt geht, es ist nicht meine Schuld. Sicher Deine Accounts, nach dem Flashen muss alles neu installiert werden. App-Daten bleiben auf der internen Karte gespeichert, aber nicht immer klappt die automatische Verbindung der Daten. Ebenso werden alle Kontodaten von z.B. Google gelöscht.</p>
+
+<p>Zum Flashen von CyanogenMod braucht man keine externe SD-Karte, man kann sie nutzen, ebenso kann man aber auch die interne SD-Karte nutzen. CyanogenMod 11 Nightly runterladen und z.B. im Download-Ordner ablegen. Ebenso das Gapps Paket. Hier kann man wählen zwischen den Paketen. das Kleinste reicht, den Rest der Apps kann man über den Play Store nachinstallieren.</p>
+
+<p>Dann das Note 8 ausschalten.</p>
+
+<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden. Auf Linux war das nicht nötig.</p>
+
+<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte <code>recovery-0.6.4.4.img</code> vorhanden sein).</p>
+
+<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1 und Ubuntu 13.10):</p>
+
+<ul>
+<li>Verbindungskabel am Rechner anschließen, aber noch nicht ans Tablet</li>
+<li>Note 8 im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
+<li>Nach der Warnung über das USB-Kabel verbinden und Ton lauter drücken</li>
+<li>im Terminal <code>heimdall flash --RECOVERY recovery-0.6.4.4.img --no-reboot</code> eingeben</li>
+<li>Das Tablet startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
+<li>Das Tablet neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
+<li>Note 8 ist nun im Recovery-Modus und man kann CM-11 installieren</li>
+<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
+<li>data und cache wipe starten</li>
+<li>install zip from sdcard auswählen</li>
+<li>choose zip from sdcard, um die Firmware auszuwählen</li>
+<li>CM-11 wird installiert.</li>
+<li>Mit gapps das gleiche wiederholen</li>
+<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
+</ul>
+
+
+<p>Das wars. Es geht insgesamt recht schnell, das Laden der einzelnen Programme und Vorbereiten des Flashens dauert wesentlich länger.</p>
+
+<p>Viel Spass.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DD-WRT Router hinter Unitymedia-Kabelnetz]]></title>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/"/>
+    <updated>2014-01-05T11:56:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz</id>
+    <content type="html"><![CDATA[<p>Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
+den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
+dann wird es mit der Verbindung in den meisten Fällen nicht klappen,
+weil Unitymedia die MAC nicht akzeptiert. Dafür gibt es eine einfache
+Lösung, Mac-Cloning. D.h. man trägt in die MAC Einstellungen des Routers
+die MAC Adresse des Modems ein und schon klappt die Verbindung mit dem
+WAN von Unitymedia. Dazu geht man in dd-wrt auf Setup / MAC Address
+Clone und trägt in die erste Zeile die Modemadresse ein. Dazu noch Mac
+Clone enable anklicken. Eventuell muss man Router und Modem neu starten,
+damit der Router die WAN-Adresse bekommt.</p>
+
+<p>Das gleiche gilt übrigens auch für eine FritzBox, die man ebenfalls
+hinter einem Unitymedia-Kabelmodem betreiben kann.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DD-WRT auf einem TP-Link WDR4900 V1 Router installieren]]></title>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/"/>
+    <updated>2014-01-05T11:41:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren</id>
+    <content type="html"><![CDATA[<p>Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
+viel. Leider gibt es kaum Informationen zu finden, wie man es
+installiert. Da man aber auch viel kaputt machen kann, gebe ich kurz die
+ersten Schritte an.</p>
+
+<p>In den Foren und auf den Infoseiten stehen wichtige Details zur
+alternativen Firmware. Die sollten schon gelesen werden. Wenn etwas
+schiefgeht, ich bin nicht schuld daran!</p>
+
+<p>Um den Router zu flashen wird beim ersten Mal eine besondere Datei
+benötigt, die sich hier befindet:
+<a href="ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/">ftp://dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2013/12-24-2013-r23204/tplink_tl-wdr4900v1/</a>
+Lade <code>factory-to-ddwrt.bin</code> herunter und lade es als Firmwareupgrade im
+Browser in den Router hoch. Der Router wird es als Firmware erkennen und
+das Gerät flashen. Vorher empfiehlt dd-wrt den Router vollständig
+zurückzusetzen.</p>
+
+<p>Für spätere Upgrades der dd-wrt Firmware muss die andere Datei verwendet
+werden <code>tl-wdr4900-webflash.bin</code>.</p>
+
+<p>Leider ist die dd-wrt Weboberfläche alles andere als stabil und stürzt
+häufig ab. Dafür ist es sinnvoll, wenn man sich ssh auf dem Gerät
+einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195]]></title>
+    <link href="http://burningTyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/"/>
+    <updated>2013-12-19T16:55:00+01:00</updated>
+    <id>http://burningTyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195</id>
+    <content type="html"><![CDATA[<p>Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein Telefon unbrauchbar geworden ist, es ist deine persönliche Verantwortung.</p>
+
+<ul>
+<li>Überblick: <a href="http://wiki.cyanogenmod.org/w/Serranoltexx_Info">wiki.cyanogenmod.org</a></li>
+<li>Installieren: <a href="http://wiki.cyanogenmod.org/w/Install_CM_for_serranoltexx">wiki.cyanogenmod.org</a></li>
+<li>Installieren 2: <a href="http://forum.xda-developers.com/showthread.php?t=2558685">forum.xda-developers.com</a></li>
+</ul>
+
+
+<p>Es wird keine SD-Karte gebraucht, der interne Speicher reicht aus, um CM-11 zu flashen.</p>
+
+<p>CM-11 ist noch Alpha. Es läuft aber ok. Also los.</p>
+
+<p>Folgende Downloads werden benötigt:</p>
+
+<ul>
+<li><a href="http://forum.xda-developers.com/showthread.php?t=2364980">ClockworkMod Recovery</a> Datei <code>recovery-clockwork-6.0.4.6-serranoltexx.tar.zip</code> o.ä. laden</li>
+<li><a href="http://www.glassechidna.com.au/products/heimdall/">Heimdall</a></li>
+<li><a href="http://get.cm/?device=serranoltexx">CyanogenMod 11</a></li>
+<li><a href="http://wiki.cyanogenmod.org/w/Gapps">gapps</a></li>
+</ul>
+
+
+<p>Bitte unter den zwei Installieren Links die aktuelle Version auswählen.</p>
+
+<p>Vor der Installation empfiehlt es sich, den Telefonspeicher zu sichern, d.h. SMS und Anrufe in einer Datenbank abzulegen, damit man sie später wieder einspielen kann. Gleiches gilt für die installierten Apps, die man sicher gerne wieder haben möchte.</p>
+
+<p>Alle sind im Market zu finden:
+* AppBak
+* SMS Backup and Restore
+* Call Logs Backup and Restore</p>
+
+<p>Die anderen App-Daten, die bisher angelegt wurden, werden beim Flashen nicht gelöscht. Dafür aber alle Accounts. Es macht Sinn, sich vorher alle zu notieren, damit man hinterher nicht anfängt zu suchen, wenn man sich für alle Dienste neu einloggen muss.</p>
+
+<p>Heimdall installieren, auf dem Mac muss nach der Installation ein Reboot durchgeführt werden.</p>
+
+<p>ClockworkMod Recovery entpacken und im Terminal in das entsprechende Verzeichnis wechseln (es sollte recovery.img vorhanden sein).</p>
+
+<p>CyanogenMod auf <code>/sdcard</code> kopieren – auf dem s4 mini ist das ein interner Speicher.</p>
+
+<p>Nun folgende Schritte durchführen (so ging es unter Mac OS X 10.9.1):</p>
+
+<ul>
+<li>S4 mini ausschalten</li>
+<li>Verbindungskabel an den Mac anschließen, aber noch nicht ans Telefon</li>
+<li>S4 mini im Download-Modus starten (Ton-leise + An/Aus + Home)</li>
+<li>im Terminal <code>heimdall flash --RECOVERY recovery.img --no-reboot</code></li>
+<li>Das S4 mini startet den blauen Balken und im Terminal gibt es eine Erfolgsmeldung</li>
+<li>Das S4 mini neu starten mit Hilfe von Ton-lauter + An/Aus + Home</li>
+<li>S4 mini ist nun im Recovery-Modus und man kann CM-11 installieren</li>
+<li>An/Aus geht im Menü zurück, Home bestätigt die Auswahl, die man mit den laut/leise Tasten trifft</li>
+<li>data und cache wipe starten</li>
+<li>install zip from sdcard auswählen</li>
+<li>choose zip from sdcard, um die Firmware auszuwählen</li>
+<li>CM-11 wird installiert.</li>
+<li>Mit gapps das gleiche wiederholen</li>
+<li>reboot und warten, bis der cache aufgebaut wird (kann ein paar Minuten dauern)</li>
+</ul>
+
+
+<p>Nun mit Hilfe der SMS- und Anrufwiederherstellung beides zurück aufs Telefon holen und fertig ist die Sache.</p>
 ]]></content>
   </entry>
   
