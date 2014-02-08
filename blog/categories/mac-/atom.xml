@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mac, | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/mac-/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/mac-/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to fix a corrupt Mac OS X hard drive (catolog)]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
     <updated>2014-01-05T11:19:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
+    <id>http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
     <content type="html"><![CDATA[<p>Usually you won't notice a corrupt hard drive under Mac OS X unless it
 tells you so or because you checked your hard drive in Disk Utils.</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: moodle | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/moodle/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/moodle/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Moodle Datenbankmigration]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/"/>
+    <link href="http://burningTyger.github.io/blog/2013/11/01/moodle-datenbankmigration/"/>
     <updated>2013-11-01T18:29:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration</id>
+    <id>http://burningTyger.github.io/blog/2013/11/01/moodle-datenbankmigration</id>
     <content type="html"><![CDATA[<p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodles cron jobs beschleunigen]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/"/>
+    <link href="http://burningTyger.github.io/blog/2013/10/30/moodles-cron-jobs-beschleunigen/"/>
     <updated>2013-10-30T20:33:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen</id>
+    <id>http://burningTyger.github.io/blog/2013/10/30/moodles-cron-jobs-beschleunigen</id>
     <content type="html"><![CDATA[<p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
 Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
 cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
@@ -56,9 +56,9 @@ wie folgt aus:</p>
   
   <entry>
     <title type="html"><![CDATA[Moodle on Openshift one liner]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/"/>
+    <link href="http://burningTyger.github.io/blog/2013/02/10/moodle-on-openshift-one-liner/"/>
     <updated>2013-02-10T21:55:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner</id>
+    <id>http://burningTyger.github.io/blog/2013/02/10/moodle-on-openshift-one-liner</id>
     <content type="html"><![CDATA[<pre><code>rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git
 </code></pre>
 
@@ -68,9 +68,9 @@ wie folgt aus:</p>
   
   <entry>
     <title type="html"><![CDATA[Moodle auf Openshift betreiben]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben/"/>
+    <link href="http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben/"/>
     <updated>2013-02-01T20:35:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben</id>
+    <id>http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben</id>
     <content type="html"><![CDATA[<h3>Moodle?</h3>
 
 <p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
@@ -168,9 +168,9 @@ oder per eMail über b6tyger bei gmail.com.</p>
   
   <entry>
     <title type="html"><![CDATA[Custom config files in Openshift submodules]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
     <updated>2013-01-16T20:08:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
+    <id>http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
     <content type="html"><![CDATA[<p>Using a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a> in one
 of your <a href="https://openshift.redhat.com">Openshift</a> apps can be quite useful. I
 created a <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> and needed to embed

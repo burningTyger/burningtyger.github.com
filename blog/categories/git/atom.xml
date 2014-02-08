@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: git | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/git/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Custom config files in Openshift submodules]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
     <updated>2013-01-16T20:08:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
+    <id>http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
     <content type="html"><![CDATA[<p>Using a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a> in one
 of your <a href="https://openshift.redhat.com">Openshift</a> apps can be quite useful. I
 created a <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> and needed to embed

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: security | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/security/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hassle free secure tokens on Openshift]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/"/>
     <updated>2013-01-10T15:01:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift</id>
+    <id>http://burningTyger.github.io/blog/2013/01/10/hassle-free-secure-tokens-on-openshift</id>
     <content type="html"><![CDATA[<p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
 vars that can be used by your apps. This is really useful for creating
 generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>

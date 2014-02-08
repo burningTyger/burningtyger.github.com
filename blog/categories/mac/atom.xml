@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mac | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/mac/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ubuntu and the MacBook Pro 3.1]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/"/>
+    <link href="http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/"/>
     <updated>2014-02-06T11:29:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
+    <id>http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
     <content type="html"><![CDATA[<p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
 because it breathes fresh air into an "older" Mac but also because it runs a lot
 smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>

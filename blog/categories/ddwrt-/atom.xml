@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ddwrt, | Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/blog/categories/ddwrt-/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/blog/categories/ddwrt-/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[DD-WRT Router hinter Unitymedia-Kabelnetz]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/"/>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/"/>
     <updated>2014-01-05T11:56:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz</id>
+    <id>http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz</id>
     <content type="html"><![CDATA[<p>Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
 den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
 dann wird es mit der Verbindung in den meisten Fällen nicht klappen,

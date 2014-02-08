@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Some thoughts]]></title>
-  <link href="http://burningTyger.github.com/atom.xml" rel="self"/>
-  <link href="http://burningTyger.github.com/"/>
-  <updated>2014-02-08T15:17:29+01:00</updated>
-  <id>http://burningTyger.github.com/</id>
+  <link href="http://burningTyger.github.io/atom.xml" rel="self"/>
+  <link href="http://burningTyger.github.io/"/>
+  <updated>2014-02-08T15:22:29+01:00</updated>
+  <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[CyanogenMod 11 nightlies ok again]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again/"/>
+    <link href="http://burningTyger.github.io/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again/"/>
     <updated>2014-02-06T11:39:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again</id>
+    <id>http://burningTyger.github.io/blog/2014/02/06/cyanogenmod-11-nightlies-ok-again</id>
     <content type="html"><![CDATA[<p>After some broken nightlies for many supported devices CyanogenMod 11 nightlies
 are ok again. I have a build from 5/2/14 running on both devices, I9195 and N5110.</p>
 
@@ -28,9 +28,9 @@ its settings but works well otherwise.</p>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu and the MacBook Pro 3.1]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/"/>
+    <link href="http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1/"/>
     <updated>2014-02-06T11:29:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
+    <id>http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
     <content type="html"><![CDATA[<p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
 because it breathes fresh air into an &#8220;older&#8221; Mac but also because it runs a lot
 smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
@@ -59,9 +59,9 @@ but that&#8217;s the price for a working video card.</p>
   
   <entry>
     <title type="html"><![CDATA[ClockworkMod Recovery lässt sich nicht mit Heimdall installieren]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/"/>
+    <link href="http://burningTyger.github.io/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren/"/>
     <updated>2014-02-03T21:06:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren</id>
+    <id>http://burningTyger.github.io/blog/2014/02/03/clockworkmod-recovery-lasst-sich-nicht-mit-heimdall-installieren</id>
     <content type="html"><![CDATA[<p>Gestern habe ich einen fatalen Fehler gemacht. Das letzte Nightly von CyanogenMod 11 war defekt und mein i9195 ließ sich nicht mehr starten. Das CM Logo drehte eine Endlosschleife und nichts war zu machen. Also nochmal über den Recovery Mode installieren, die Nightlies werden beim internen Update ja auf der SD-Karte abgelegt. Aber, das half auch nicht.</p>
 
 <p>Vielleicht ist ClockworkMod Recovery nicht aktuell genug? Also das auch gleich neu installieren, Heimdall ist schnell auf Linux installiert, CMR ist auch da, los gehts.</p>
@@ -81,9 +81,9 @@ Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda For
   
   <entry>
     <title type="html"><![CDATA[CyanogenMod 11 auf dem Samsung Galaxy Note 8 (N5110 WiFi)]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/"/>
+    <link href="http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi/"/>
     <updated>2014-02-03T20:29:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi</id>
+    <id>http://burningTyger.github.io/blog/2014/02/03/cyanogenmod-11-auf-dem-samsung-galaxy-note-8-n5110-wifi</id>
     <content type="html"><![CDATA[<p>Der Ablauf ist im Prinzip der Selbe, wie schon im <a href="http://burningtyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/">vorhergehenden Beitrag</a> zum Samsung Galaxy S4 Mini, aber der Einfachheit halber, schreibe ich es nochmal auf und gebe gleich die notwendigen Quellen mit an.</p>
 
 <p>Um es gleich vorweg zu nehmen, CyanogenMod 11 ist auf dem Note 8 ein echter Zugewinn. Nach dem letzten Update von Samsung auf Android 4.2.2 gab es kein Halten mehr, das musste schleunigst wieder runter – wackelige Scrolls zwischen den Home Screens waren und sind unerträglich für so ein hochwertiges Tablett. Und einen Vorteil konnten man bei dem Update nicht erkennen.</p>
@@ -144,9 +144,9 @@ Link: <a href="http://forum.xda-developers.com/showthread.php?t=1391189">xda For
   
   <entry>
     <title type="html"><![CDATA[DD-WRT Router hinter Unitymedia-Kabelnetz]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/"/>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz/"/>
     <updated>2014-01-05T11:56:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz</id>
+    <id>http://burningTyger.github.io/blog/2014/01/05/dd-wrt-router-hinter-unitymedia-kabelnetz</id>
     <content type="html"><![CDATA[<p>Unitymedia liefert in den meisten Fällen lediglich ein Kabelmodem für
 den Internetanschluss. Wenn man einen eigenen Router dahinterschaltet,
 dann wird es mit der Verbindung in den meisten Fällen nicht klappen,
@@ -165,9 +165,9 @@ hinter einem Unitymedia-Kabelmodem betreiben kann.</p>
   
   <entry>
     <title type="html"><![CDATA[DD-WRT auf einem TP-Link WDR4900 V1 Router installieren]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/"/>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren/"/>
     <updated>2014-01-05T11:41:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren</id>
+    <id>http://burningTyger.github.io/blog/2014/01/05/dd-wrt-auf-einem-tp-link-wdr4900-v1-router-installieren</id>
     <content type="html"><![CDATA[<p>Um DD-WRT auf dem TP-Link WDR4900 V1 zu installieren, braucht man nicht
 viel. Leider gibt es kaum Informationen zu finden, wie man es
 installiert. Da man aber auch viel kaputt machen kann, gebe ich kurz die
@@ -196,9 +196,9 @@ einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
   
   <entry>
     <title type="html"><![CDATA[How to fix a corrupt Mac OS X hard drive (catolog)]]></title>
-    <link href="http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
+    <link href="http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
     <updated>2014-01-05T11:19:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
+    <id>http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
     <content type="html"><![CDATA[<p>Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
 tells you so or because you checked your hard drive in Disk Utils.</p>
 
@@ -238,9 +238,9 @@ simple. Like, fix that partition when you find errors.</p>
   
   <entry>
     <title type="html"><![CDATA[Cyanogenmod 11 auf dem Samsung Galaxy S4 mini GT-I9195]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/"/>
+    <link href="http://burningTyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195/"/>
     <updated>2013-12-19T16:55:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195</id>
+    <id>http://burningTyger.github.io/blog/2013/12/19/cyanogenmod-11-auf-dem-samsung-galaxy-s4-mini-gt-i9195</id>
     <content type="html"><![CDATA[<p>Die Infos wurden zusammengetragen mit Hilfe der folgenden Seiten und stellen keinen Anspruch auf Vollständigkeit. Wenn was schiefgeht und dein Telefon unbrauchbar geworden ist, es ist deine persönliche Verantwortung.</p>
 
 <ul>
@@ -307,18 +307,18 @@ simple. Like, fix that partition when you find errors.</p>
   
   <entry>
     <title type="html"><![CDATA[Moodle Datenbankmigration]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration/"/>
+    <link href="http://burningTyger.github.io/blog/2013/11/01/moodle-datenbankmigration/"/>
     <updated>2013-11-01T18:29:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/11/01/moodle-datenbankmigration</id>
+    <id>http://burningTyger.github.io/blog/2013/11/01/moodle-datenbankmigration</id>
     <content type="html"><![CDATA[<p>Moodle wird häufig ohne weiter darüber nachzudenken auf einem LAMP-Stack installiert, also Linux, Apache, MySQL und PHP. Ist auch soweit ok. Es funktioniert ja. So mancher wird aber nach einiger Zeit denken, dass es vielleicht besser gewesen wäre diese oder jene Datenbank zu nehmen, anstelle von MySQL. Gründe gibt es genug: Performance, Oracle, GPL vs BSD, etc. Aber einfach so die Dantenbank zu wechseln geht nicht. Wer ein bisschen googlet, wird herausfinden, dass man nicht mal gerade eben ein MySQL Dump und ein (z.B.) Postgres Restore machen kann. Das geht halt nicht. Fertig. Mühsam geht es dann vielleicht doch, aber eigentlich lässt man besser die Finger davon. Zum Glück gibt es eine praktikable Lösung, die näher liegt als man denkt. Moodle selber bringt eine experimentelle Migrationsschnittstelle mit, die sich in den Entwicklereinstellungen unter experiementell befindet. Einfach die neue Datenbank installieren, das passenden php-Modul zur Verfügung stellen und schon zeigt das Werkzeug alle zur Verfügung stehenden Datenbanken an, in die exportiert werden kann. Das geht relativ schnell und nach erfolgreicher Migration, muss lediglich die config.php mit den neuen Daten geändert werden.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Moodles cron jobs beschleunigen]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen/"/>
+    <link href="http://burningTyger.github.io/blog/2013/10/30/moodles-cron-jobs-beschleunigen/"/>
     <updated>2013-10-30T20:33:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/10/30/moodles-cron-jobs-beschleunigen</id>
+    <id>http://burningTyger.github.io/blog/2013/10/30/moodles-cron-jobs-beschleunigen</id>
     <content type="html"><![CDATA[<p>Moodle ist ein recht träges System, das sich aber punktuell und mit gezielten
 Maßnahmen deutlich beschleunigen lässt. Eine davon ist die Ausführung der
 cron-Jobs, die man entweder über einen http-Aufruf laufen lassen kann oder,
@@ -348,9 +348,9 @@ wie folgt aus:</p>
   
   <entry>
     <title type="html"><![CDATA[Moodle on Openshift one liner]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner/"/>
+    <link href="http://burningTyger.github.io/blog/2013/02/10/moodle-on-openshift-one-liner/"/>
     <updated>2013-02-10T21:55:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/02/10/moodle-on-openshift-one-liner</id>
+    <id>http://burningTyger.github.io/blog/2013/02/10/moodle-on-openshift-one-liner</id>
     <content type="html"><![CDATA[<pre><code>rhc app create moodle php-5 mysql --from-code=git://github.com/burningTyger/openshift_moodle.git
 </code></pre>
 
@@ -360,9 +360,9 @@ wie folgt aus:</p>
   
   <entry>
     <title type="html"><![CDATA[Moodle auf Openshift betreiben]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben/"/>
+    <link href="http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben/"/>
     <updated>2013-02-01T20:35:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/02/01/moodle-auf-openshift-betreiben</id>
+    <id>http://burningTyger.github.io/blog/2013/02/01/moodle-auf-openshift-betreiben</id>
     <content type="html"><![CDATA[<h3>Moodle?</h3>
 
 <p>Moodle ist die klassische Lernplatform fürs Intra-/Internet und wird von
@@ -460,9 +460,9 @@ oder per eMail über b6tyger bei gmail.com.</p>
   
   <entry>
     <title type="html"><![CDATA[Custom config files in Openshift submodules]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/"/>
     <updated>2013-01-16T20:08:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
+    <id>http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules</id>
     <content type="html"><![CDATA[<p>Using a <a href="http://git-scm.com/book/en/Git-Tools-Submodules">git submodule</a> in one
 of your <a href="https://openshift.redhat.com">Openshift</a> apps can be quite useful. I
 created a <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> and needed to embed
@@ -547,9 +547,9 @@ you ask me.</p>
   
   <entry>
     <title type="html"><![CDATA[Hassle free secure tokens on Openshift]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/10/hassle-free-secure-tokens-on-openshift/"/>
     <updated>2013-01-10T15:01:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/10/hassle-free-secure-tokens-on-openshift</id>
+    <id>http://burningTyger.github.io/blog/2013/01/10/hassle-free-secure-tokens-on-openshift</id>
     <content type="html"><![CDATA[<p><a href="https://openshift.redhat.com">Openshift</a> makes extensive use of env
 vars that can be used by your apps. This is really useful for creating
 generic repositories like <a href="https://github.com/openshift">Quickstarts</a>.</p>
@@ -598,9 +598,9 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
   
   <entry>
     <title type="html"><![CDATA[Installing a custom translation for Instructure's Canvas]]></title>
-    <link href="http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/"/>
+    <link href="http://burningTyger.github.io/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas/"/>
     <updated>2013-01-04T00:14:00+01:00</updated>
-    <id>http://burningTyger.github.com/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas</id>
+    <id>http://burningTyger.github.io/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas</id>
     <content type="html"><![CDATA[<p>You can find their repos here over at @instructure. Canvas is an
 interesting Ruby on Rails Learning management system that looks a lot
 cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
