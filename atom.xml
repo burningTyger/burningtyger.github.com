@@ -4,7 +4,7 @@
   <title><![CDATA[Some thoughts]]></title>
   <link href="http://burningTyger.github.io/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:49:08+01:00</updated>
+  <updated>2014-02-09T17:54:36+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -54,18 +54,18 @@ its settings but works well otherwise.</p>
     <updated>2014-02-06T11:29:00+01:00</updated>
     <id>http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
     <content type="html"><![CDATA[<p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
-because it breathes fresh air into an &#8220;older&#8221; Mac but also because it runs a lot
+because it breathes fresh air into an &ldquo;older&rdquo; Mac but also because it runs a lot
 smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
 
 <p>I know, the machine is not quite state of the art but if Apple decides to let users
-install 10.9 on their machines they should at least make sure it&#8217;s a smooth experience.</p>
+install 10.9 on their machines they should at least make sure it&rsquo;s a smooth experience.</p>
 
-<p>But it&#8217;s not. I have 4GB of memory in my MBP and it&#8217;s still slow and sluggish at
+<p>But it&rsquo;s not. I have 4GB of memory in my MBP and it&rsquo;s still slow and sluggish at
 best. Not very nice. And looking at the specs the MBP is not bad.</p>
 
 <p>Anyway, putting Ubuntu on it was ok but here and there there are some issues that
 need some tinkering. One of them was the graphics card. It works but there are always
-error messages in Gnome after startup. I tried the Nouveau driver but it didn&#8217;t
+error messages in Gnome after startup. I tried the Nouveau driver but it didn&rsquo;t
 really work. Issues here and there. So I tried the Nvidia driver which worked better
 but still produced the error messages. I think it was the 319 driver.</p>
 
@@ -74,8 +74,8 @@ voila, no more error messages.</p>
 
 <p>So if you come here looking for the MacBook Pro late 2007 3.1 model with a G84M
 video card, also known as Nvidia GeForce 8600M GT do not look further but use the
-NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&#8217;s proprietary
-but that&#8217;s the price for a working video card.</p>
+NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&rsquo;s proprietary
+but that&rsquo;s the price for a working video card.</p>
 ]]></content>
   </entry>
   
@@ -221,26 +221,26 @@ einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
     <link href="http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
     <updated>2014-01-05T11:19:00+01:00</updated>
     <id>http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
-    <content type="html"><![CDATA[<p>Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
+    <content type="html"><![CDATA[<p>Usually you won&rsquo;t notice a corrupt hard drive under Mac OS X unless it
 tells you so or because you checked your hard drive in Disk Utils.</p>
 
 <p>If it is broken to some degree Disk Utils will let you fix them or tells
 you to reformat your hard drive. In some cases that is not an option.</p>
 
-<p>In my case I had a broken hard drive that wouldn&#8217;t let me resize the
-partitions and I wasn&#8217;t able to install Linux on a separate partition.
+<p>In my case I had a broken hard drive that wouldn&rsquo;t let me resize the
+partitions and I wasn&rsquo;t able to install Linux on a separate partition.
 Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
 to run DiskUtils from another drive. Runing the Disk Utils from the
-recovery partition didn&#8217;t let me fix or reformat the hard drive either
-(because it&#8217;s on the same hard drive after all) and the internet
-recovery mode didn&#8217;t even start. Neither the USB recovery disk I
+recovery partition didn&rsquo;t let me fix or reformat the hard drive either
+(because it&rsquo;s on the same hard drive after all) and the internet
+recovery mode didn&rsquo;t even start. Neither the USB recovery disk I
 created.</p>
 
 <p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
 I also intended to install on my main Mac. It offers gparted, the Linux
 partition manager. Running that from another medium brought hope to
 fixing the hard drive partition mess. It failed. It said something about
-a corrupt catalog on the mac partition and wasn&#8217;t able to fix it. Not
+a corrupt catalog on the mac partition and wasn&rsquo;t able to fix it. Not
 being able to fix the problem in one place also meant no resizing the
 partition in the other place. And I was stuck with the same old disk.</p>
 
@@ -253,7 +253,7 @@ and corrupt catalog data and in the end I had a working hard drive with
 no more errors and I was able to resize the partition to create free
 space on it which Lubuntu magically filled with Linux.</p>
 
-<p>I don&#8217;t exacly remember the fsck comman I used but it was something
+<p>I don&rsquo;t exacly remember the fsck comman I used but it was something
 simple. Like, fix that partition when you find errors.</p>
 ]]></content>
   </entry>
@@ -493,7 +493,7 @@ doing so but most are a pain to maintain if you need frequent updates to keep
 up with security issues.</p>
 
 <p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
-overwriting with archives etc. use a submodule instead. I&#8217;ll post an example
+overwriting with archives etc. use a submodule instead. I&rsquo;ll post an example
 with Moodle here, the same can be said about most other apps. Assuming you set
 up a new app through the web interface:</p>
 
@@ -534,15 +534,15 @@ is set to a certain commit:</p>
 <p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
 
 <p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
-is empty. That&#8217;s because there is nothing. All it does is refer to that moodle
-repo commit. You can trigger the clone of that repo but there&#8217;s no need to.
+is empty. That&rsquo;s because there is nothing. All it does is refer to that moodle
+repo commit. You can trigger the clone of that repo but there&rsquo;s no need to.
 Openshift can do that for you once you push it there.</p>
 
-<p>You get the idea. You don&#8217;t have control over that submodule. Take it or leave
+<p>You get the idea. You don&rsquo;t have control over that submodule. Take it or leave
 it. So unless you want to fork moodle with your own changes to the repo and
 pull in changes to that fork you cannot make changes to it.</p>
 
-<p>That&#8217;s where we are. However, there is a simple workaround for this on
+<p>That&rsquo;s where we are. However, there is a simple workaround for this on
 Openshift that is really slick and easy to set up. You can use one of the
 <code>action_hooks</code> that come with each app and that reside in the
 <code>.openshift/action_hooks</code> dir in the root of your repo.</p>
@@ -583,7 +583,7 @@ you need to create a secure token to have an extra layer of security.</p>
 
 <p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
 secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn&#8217;t want to create a config file that needs to be manually changed
+I didn&rsquo;t want to create a config file that needs to be manually changed
 by the user so I thought of something else:</p>
 
 <pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
@@ -611,7 +611,7 @@ and writes a random string into it.</p>
 
 <p>After that it writes the string to STDOUT when it is set to
 <code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app&#8217;s config files without manually entering a string yourself.</p>
+your app&rsquo;s config files without manually entering a string yourself.</p>
 
 <p>If you need to migrate your app from somewhere else to Openshift you can
 still use this script and just set via SSH the string in <code>token</code>.</p>
@@ -625,7 +625,7 @@ still use this script and just set via SSH the string in <code>token</code>.</p>
     <id>http://burningTyger.github.io/blog/2013/01/04/installing-a-custom-translation-for-instructures-canvas</id>
     <content type="html"><![CDATA[<p>You can find their repos here over at @instructure. Canvas is an
 interesting Ruby on Rails Learning management system that looks a lot
-cleaner than Moodle. It&#8217;s still 1.8 only and running on rails 2.3 but
+cleaner than Moodle. It&rsquo;s still 1.8 only and running on rails 2.3 but
 still promising. Provided with the default language English there is
 Spanish and Russian available.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | Some thoughts]]></title>
   <link href="http://burningTyger.github.io/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:49:08+01:00</updated>
+  <updated>2014-02-09T17:54:36+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -19,18 +19,18 @@
     <updated>2014-02-06T11:29:00+01:00</updated>
     <id>http://burningTyger.github.io/blog/2014/02/06/ubuntu-and-the-macbook-pro-3-dot-1</id>
     <content type="html"><![CDATA[<p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
-because it breathes fresh air into an "older" Mac but also because it runs a lot
+because it breathes fresh air into an &ldquo;older&rdquo; Mac but also because it runs a lot
 smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
 
 <p>I know, the machine is not quite state of the art but if Apple decides to let users
-install 10.9 on their machines they should at least make sure it's a smooth experience.</p>
+install 10.9 on their machines they should at least make sure it&rsquo;s a smooth experience.</p>
 
-<p>But it's not. I have 4GB of memory in my MBP and it's still slow and sluggish at
+<p>But it&rsquo;s not. I have 4GB of memory in my MBP and it&rsquo;s still slow and sluggish at
 best. Not very nice. And looking at the specs the MBP is not bad.</p>
 
 <p>Anyway, putting Ubuntu on it was ok but here and there there are some issues that
 need some tinkering. One of them was the graphics card. It works but there are always
-error messages in Gnome after startup. I tried the Nouveau driver but it didn't
+error messages in Gnome after startup. I tried the Nouveau driver but it didn&rsquo;t
 really work. Issues here and there. So I tried the Nvidia driver which worked better
 but still produced the error messages. I think it was the 319 driver.</p>
 
@@ -39,8 +39,8 @@ voila, no more error messages.</p>
 
 <p>So if you come here looking for the MacBook Pro late 2007 3.1 model with a G84M
 video card, also known as Nvidia GeForce 8600M GT do not look further but use the
-NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It's proprietary
-but that's the price for a working video card.</p>
+NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&rsquo;s proprietary
+but that&rsquo;s the price for a working video card.</p>
 ]]></content>
   </entry>
   
@@ -49,26 +49,26 @@ but that's the price for a working video card.</p>
     <link href="http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog/"/>
     <updated>2014-01-05T11:19:00+01:00</updated>
     <id>http://burningTyger.github.io/blog/2014/01/05/how-to-fix-a-corrupt-mac-os-x-hard-drive-catolog</id>
-    <content type="html"><![CDATA[<p>Usually you won't notice a corrupt hard drive under Mac OS X unless it
+    <content type="html"><![CDATA[<p>Usually you won&rsquo;t notice a corrupt hard drive under Mac OS X unless it
 tells you so or because you checked your hard drive in Disk Utils.</p>
 
 <p>If it is broken to some degree Disk Utils will let you fix them or tells
 you to reformat your hard drive. In some cases that is not an option.</p>
 
-<p>In my case I had a broken hard drive that wouldn't let me resize the
-partitions and I wasn't able to install Linux on a separate partition.
+<p>In my case I had a broken hard drive that wouldn&rsquo;t let me resize the
+partitions and I wasn&rsquo;t able to install Linux on a separate partition.
 Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
 to run DiskUtils from another drive. Runing the Disk Utils from the
-recovery partition didn't let me fix or reformat the hard drive either
-(because it's on the same hard drive after all) and the internet
-recovery mode didn't even start. Neither the USB recovery disk I
+recovery partition didn&rsquo;t let me fix or reformat the hard drive either
+(because it&rsquo;s on the same hard drive after all) and the internet
+recovery mode didn&rsquo;t even start. Neither the USB recovery disk I
 created.</p>
 
 <p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
 I also intended to install on my main Mac. It offers gparted, the Linux
 partition manager. Running that from another medium brought hope to
 fixing the hard drive partition mess. It failed. It said something about
-a corrupt catalog on the mac partition and wasn't able to fix it. Not
+a corrupt catalog on the mac partition and wasn&rsquo;t able to fix it. Not
 being able to fix the problem in one place also meant no resizing the
 partition in the other place. And I was stuck with the same old disk.</p>
 
@@ -81,7 +81,7 @@ and corrupt catalog data and in the end I had a working hard drive with
 no more errors and I was able to resize the partition to create free
 space on it which Lubuntu magically filled with Linux.</p>
 
-<p>I don't exacly remember the fsck comman I used but it was something
+<p>I don&rsquo;t exacly remember the fsck comman I used but it was something
 simple. Like, fix that partition when you find errors.</p>
 ]]></content>
   </entry>

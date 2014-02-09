@@ -4,7 +4,7 @@
   <title><![CDATA[Category: moodle | Some thoughts]]></title>
   <link href="http://burningTyger.github.io/blog/categories/moodle/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:49:08+01:00</updated>
+  <updated>2014-02-09T17:54:36+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -179,7 +179,7 @@ doing so but most are a pain to maintain if you need frequent updates to keep
 up with security issues.</p>
 
 <p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
-overwriting with archives etc. use a submodule instead. I'll post an example
+overwriting with archives etc. use a submodule instead. I&rsquo;ll post an example
 with Moodle here, the same can be said about most other apps. Assuming you set
 up a new app through the web interface:</p>
 
@@ -220,15 +220,15 @@ is set to a certain commit:</p>
 <p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
 
 <p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
-is empty. That's because there is nothing. All it does is refer to that moodle
-repo commit. You can trigger the clone of that repo but there's no need to.
+is empty. That&rsquo;s because there is nothing. All it does is refer to that moodle
+repo commit. You can trigger the clone of that repo but there&rsquo;s no need to.
 Openshift can do that for you once you push it there.</p>
 
-<p>You get the idea. You don't have control over that submodule. Take it or leave
+<p>You get the idea. You don&rsquo;t have control over that submodule. Take it or leave
 it. So unless you want to fork moodle with your own changes to the repo and
 pull in changes to that fork you cannot make changes to it.</p>
 
-<p>That's where we are. However, there is a simple workaround for this on
+<p>That&rsquo;s where we are. However, there is a simple workaround for this on
 Openshift that is really slick and easy to set up. You can use one of the
 <code>action_hooks</code> that come with each app and that reside in the
 <code>.openshift/action_hooks</code> dir in the root of your repo.</p>

@@ -18,13 +18,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.io/">
+  <link rel="canonical" href="http://burningTyger.github.io">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Some thoughts" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -46,6 +47,14 @@
 </head>
 
 <body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Some thoughts</a></h1>
+  
+    <h2>directly from the furnace</h2>
+  
+</hgroup>
+
+</header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
@@ -197,18 +206,18 @@ its settings but works well otherwise.</p>
 
 
   <div class="entry-content"><p>Running Linux on a 2007 MacBook Pro aka 3.1 is quite a nice experience. Not just
-because it breathes fresh air into an &#8220;older&#8221; Mac but also because it runs a lot
+because it breathes fresh air into an &ldquo;older&rdquo; Mac but also because it runs a lot
 smoother under Linux than Mac OS X. Well, later versions of Mac OS X like Mavericks.</p>
 
 <p>I know, the machine is not quite state of the art but if Apple decides to let users
-install 10.9 on their machines they should at least make sure it&#8217;s a smooth experience.</p>
+install 10.9 on their machines they should at least make sure it&rsquo;s a smooth experience.</p>
 
-<p>But it&#8217;s not. I have 4GB of memory in my MBP and it&#8217;s still slow and sluggish at
+<p>But it&rsquo;s not. I have 4GB of memory in my MBP and it&rsquo;s still slow and sluggish at
 best. Not very nice. And looking at the specs the MBP is not bad.</p>
 
 <p>Anyway, putting Ubuntu on it was ok but here and there there are some issues that
 need some tinkering. One of them was the graphics card. It works but there are always
-error messages in Gnome after startup. I tried the Nouveau driver but it didn&#8217;t
+error messages in Gnome after startup. I tried the Nouveau driver but it didn&rsquo;t
 really work. Issues here and there. So I tried the Nvidia driver which worked better
 but still produced the error messages. I think it was the 319 driver.</p>
 
@@ -217,8 +226,8 @@ voila, no more error messages.</p>
 
 <p>So if you come here looking for the MacBook Pro late 2007 3.1 model with a G84M
 video card, also known as Nvidia GeForce 8600M GT do not look further but use the
-NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&#8217;s proprietary
-but that&#8217;s the price for a working video card.</p>
+NVIDIA binary Xorg driver called <code>nvidia-319-updates</code>. It works well. It&rsquo;s proprietary
+but that&rsquo;s the price for a working video card.</p>
 </div>
   
   
@@ -499,26 +508,26 @@ einrichtet und bei Bedarf kurz einloggt und <code>reboot</code>et.</p>
   </header>
 
 
-  <div class="entry-content"><p>Usually you won&#8217;t notice a corrupt hard drive under Mac OS X unless it
+  <div class="entry-content"><p>Usually you won&rsquo;t notice a corrupt hard drive under Mac OS X unless it
 tells you so or because you checked your hard drive in Disk Utils.</p>
 
 <p>If it is broken to some degree Disk Utils will let you fix them or tells
 you to reformat your hard drive. In some cases that is not an option.</p>
 
-<p>In my case I had a broken hard drive that wouldn&#8217;t let me resize the
-partitions and I wasn&#8217;t able to install Linux on a separate partition.
+<p>In my case I had a broken hard drive that wouldn&rsquo;t let me resize the
+partitions and I wasn&rsquo;t able to install Linux on a separate partition.
 Everything failed. My DuperDrive only reads CDs. So no OS X install DVD
 to run DiskUtils from another drive. Runing the Disk Utils from the
-recovery partition didn&#8217;t let me fix or reformat the hard drive either
-(because it&#8217;s on the same hard drive after all) and the internet
-recovery mode didn&#8217;t even start. Neither the USB recovery disk I
+recovery partition didn&rsquo;t let me fix or reformat the hard drive either
+(because it&rsquo;s on the same hard drive after all) and the internet
+recovery mode didn&rsquo;t even start. Neither the USB recovery disk I
 created.</p>
 
 <p>Being smart I burned on another Mac a rare CD-sized Lubuntu Distro which
 I also intended to install on my main Mac. It offers gparted, the Linux
 partition manager. Running that from another medium brought hope to
 fixing the hard drive partition mess. It failed. It said something about
-a corrupt catalog on the mac partition and wasn&#8217;t able to fix it. Not
+a corrupt catalog on the mac partition and wasn&rsquo;t able to fix it. Not
 being able to fix the problem in one place also meant no resizing the
 partition in the other place. And I was stuck with the same old disk.</p>
 
@@ -531,7 +540,7 @@ and corrupt catalog data and in the end I had a working hard drive with
 no more errors and I was able to resize the partition to create free
 space on it which Lubuntu magically filled with Linux.</p>
 
-<p>I don&#8217;t exacly remember the fsck comman I used but it was something
+<p>I don&rsquo;t exacly remember the fsck comman I used but it was something
 simple. Like, fix that partition when you find errors.</p>
 </div>
   
@@ -744,7 +753,7 @@ simple. Like, fix that partition when you find errors.</p>
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>

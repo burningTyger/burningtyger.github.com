@@ -4,7 +4,7 @@
   <title><![CDATA[Category: security | Some thoughts]]></title>
   <link href="http://burningTyger.github.io/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://burningTyger.github.io/"/>
-  <updated>2014-02-08T15:49:08+01:00</updated>
+  <updated>2014-02-09T17:54:36+01:00</updated>
   <id>http://burningTyger.github.io/</id>
   <author>
     <name><![CDATA[burningTyger]]></name>
@@ -29,7 +29,7 @@ you need to create a secure token to have an extra layer of security.</p>
 
 <p>For my Openshift <a href="http://j.mp/V2fOkq">Moodle Quickstart</a> I needed a
 secure token to <a href="https://github.com/burningTyger/openshift_moodle/blob/master/config/config.php#L73">salt passwords</a>.
-I didn't want to create a config file that needs to be manually changed
+I didn&rsquo;t want to create a config file that needs to be manually changed
 by the user so I thought of something else:</p>
 
 <pre><code>export OPENSHIFT_SECURE_TOKEN="$(ruby -e "
@@ -57,7 +57,7 @@ and writes a random string into it.</p>
 
 <p>After that it writes the string to STDOUT when it is set to
 <code>OPENSHIFT_SECURE_TOKEN</code>. This is the env var that you can then use in
-your app's config files without manually entering a string yourself.</p>
+your app&rsquo;s config files without manually entering a string yourself.</p>
 
 <p>If you need to migrate your app from somewhere else to Openshift you can
 still use this script and just set via SSH the string in <code>token</code>.</p>

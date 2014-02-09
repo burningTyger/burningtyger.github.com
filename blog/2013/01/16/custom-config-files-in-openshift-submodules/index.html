@@ -21,13 +21,14 @@ Moodle inside my Openshift &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/">
+  <link rel="canonical" href="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Some thoughts" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -49,6 +50,14 @@ Moodle inside my Openshift &hellip;">
 </head>
 
 <body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Some thoughts</a></h1>
+  
+    <h2>directly from the furnace</h2>
+  
+</hgroup>
+
+</header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
@@ -115,7 +124,7 @@ doing so but most are a pain to maintain if you need frequent updates to keep
 up with security issues.</p>
 
 <p>So forget about <a href="http://git-scm.com/book/ch6-7.html">subtrees</a>, manual
-overwriting with archives etc. use a submodule instead. I&#8217;ll post an example
+overwriting with archives etc. use a submodule instead. I&rsquo;ll post an example
 with Moodle here, the same can be said about most other apps. Assuming you set
 up a new app through the web interface:</p>
 
@@ -156,15 +165,15 @@ is set to a certain commit:</p>
 <p><img src="http://d.pr/i/2vLI+" alt="github: moodle path is set to commit" /></p>
 
 <p>If you clone my repository from GitHub you will also notice that the <code>php</code> dir
-is empty. That&#8217;s because there is nothing. All it does is refer to that moodle
-repo commit. You can trigger the clone of that repo but there&#8217;s no need to.
+is empty. That&rsquo;s because there is nothing. All it does is refer to that moodle
+repo commit. You can trigger the clone of that repo but there&rsquo;s no need to.
 Openshift can do that for you once you push it there.</p>
 
-<p>You get the idea. You don&#8217;t have control over that submodule. Take it or leave
+<p>You get the idea. You don&rsquo;t have control over that submodule. Take it or leave
 it. So unless you want to fork moodle with your own changes to the repo and
 pull in changes to that fork you cannot make changes to it.</p>
 
-<p>That&#8217;s where we are. However, there is a simple workaround for this on
+<p>That&rsquo;s where we are. However, there is a simple workaround for this on
 Openshift that is really slick and easy to set up. You can use one of the
 <code>action_hooks</code> that come with each app and that reside in the
 <code>.openshift/action_hooks</code> dir in the root of your repo.</p>
@@ -222,7 +231,7 @@ you ask me.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/" data-via="" data-counturl="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/" data-via="" data-counturl="http://burningTyger.github.io/blog/2013/01/16/custom-config-files-in-openshift-submodules/" >Tweet</a>
   
   
   
@@ -307,7 +316,7 @@ you ask me.</p>
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
